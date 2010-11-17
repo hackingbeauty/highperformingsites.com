@@ -29,9 +29,10 @@
         %td.load_time
           = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).lt))
         %td.ec_pw
-          = number_to_human_size(u.yslow2s.find(:last).w,2)
+          = u.yslow2s.find(:last).w
+  
         %td.pc_pw
-          = number_to_human_size(u.yslow2s.find(:last).w_c,2)
+          = u.yslow2s.find(:last).w_c
         %td.ec_r
           = u.yslow2s.find(:last).r
         %td.pc_r

@@ -1,18 +1,24 @@
 Sitespeed3::Application.routes.draw do
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
-
+  match '/all_components/:id' => 'yslow2#all_components', :as => :all_components
+  match 'yslow' => 'beacon#yslow'
+  
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  resources :yslow2
+  resources :url
+  
   # Sample resource route with options:
   #   resources :products do
   #     member do
@@ -48,7 +54,7 @@ Sitespeed3::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "url#index"
 
   # See how all your routes lay out with "rake routes"
 
