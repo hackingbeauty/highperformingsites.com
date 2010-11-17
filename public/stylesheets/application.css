@@ -1,0 +1,106 @@
+
+/*	=Main Styles
+	...................................................................... */
+	
+body {background-color:#000099;} /*#1969a9*/
+
+.container {/*background-color:white;*/-moz-border-radius:10px;-webkit-border-radius:5px;padding:20px;}
+
+
+ul {list-style-type:none;}
+
+.center {text-align:center;}
+
+.container #sub_container {background-color:white;-moz-border-radius:10px 10px;float:left;padding:20px;/*border:1px solid #0071B3*/;-moz-border-radius:10px;
+-moz-box-shadow:0 0 30px #999999;-webkit-border-radius:10px;-webkit-box-shadow:0 0 30px #999999;}
+
+.container #sub_container #sub_container_back {-moz-border-radius:5px 5px 5px 5px;background:none repeat scroll 0 0 #D4D4D4;padding:19px;}
+
+h1 { color: white;}
+
+h1, h2, h3, h4, h5, h6 {
+	/*color:white;*/
+}
+
+/*	=Link Styles
+	...................................................................... */
+
+a {text-decoration:underline;font-weight:bold;color:white !important;}
+
+#sub_container a {color:#009 !important;}
+
+h1 a {text-decoration:none;}
+
+
+/*	=Table Styles
+	...................................................................... */
+
+table {background-color:white;clear:both;font-size:95%;}
+
+table thead th {background-color:#ecf1f0;background:white url(../images/gradients/gradient-table-heading.png) repeat-x scroll 0 0;border:1px solid #DDDDDD;}
+
+table thead th.alexa {width:100px;text-align:center;}
+
+table thead th.yslow {width:100px;text-align:center;}
+
+table thead th.page_speed {width:100px;text-align:center;}
+
+table tbody tr {height:30px;}
+
+table tbody tr.even td {background:#EDF3FE;}
+
+
+/*	=Module
+	...................................................................... */
+
+.container .module {background:white;-moz-border-radius:5px;-webkit-border-radius:5px;padding:10px 20px;}
+
+.container .module h2 {font-size:1.5em;font-weight:bold;}
+
+.container h1 {margin-bottom:1em;}
+
+/*.container .module td {text-align:left;}
+*/
+
+/*	=Top Nav Styles
+	...................................................................... */
+
+/*.container #top_nav {	background:transparent url(../images/backgrounds/background-nav.png) no-repeat scroll 0 0;height:38px;margin-bottom:30px;}
+*/
+
+/*	=Left Nav Styles
+	...................................................................... */
+
+.container #left_nav {}
+
+
+/*	=Main Content Styles
+	...................................................................... */
+
+#main_content {width:100%;}
+
+.container #main_content h2 {float:left;}
+	
+.container #main_content .pagination {float:right;}
+
+
+/*	=Footer Styles
+	...................................................................... */
+	
+#footer {clear:both;}
+
+
+/*	=Show Page
+	...................................................................... */
+
+#show_page h2 {margin-bottom:40px;}	
+	
+div.grades {clear:both;margin-top:50px;}
+
+
+/*	=Link Styles
+	...................................................................... */
+
+.jqmWindow {position: relative;}
+
+.jqmWindow a.jqmClose {position:absolute; right: 10px;}
