@@ -4,7 +4,8 @@ module Yslow2Helper
     str.each do |k,v|
       if k == requested_key
         if requested_key == "w"
-          return number_to_human_size(v,2)
+          # return number_to_human_size(v,2)
+          return v
         else
           return v
         end
