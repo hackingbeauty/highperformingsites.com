@@ -1,12 +1,13 @@
 Sitespeed3::Application.routes.draw do
-  
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+  
+  match 'signup', :to => 'users#new'
   match '/all_components/:id' => 'yslow2#all_components', :as => :all_components
   match 'yslow' => 'beacon#yslow'
   
@@ -16,6 +17,7 @@ Sitespeed3::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :users
   resources :yslow2
   resources :url
   
