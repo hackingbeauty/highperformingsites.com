@@ -1,3 +1,4 @@
+require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
@@ -20,18 +21,26 @@ class User < ActiveRecord::Base
   
   # Return true if the user's password matches the submitted password.
   def has_password?(submitted_password)
-    
+    self.encrypted_password == encrypt(submitted_password)
   end
-  
   
   private
   
     def encrypt_password
+      self.salt = make_salt if new_record?
       self.encrypted_password = encrypt(self.password)
     end
     
-    def encrypt(string)
-      string
+    def make_salt
+      secure_hash("#{Time.now.utc}--#{self.password}")
+    end
+    
+    def encrypt(passwd)
+      secure_hash("#{self.salt}--#{passwd}")
+    end
+    
+    def secure_hash(passwd)
+      Digest::SHA2.hexdigest(passwd)
     end
 
 end
