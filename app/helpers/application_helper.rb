@@ -1,6 +1,15 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
+  def title
+      base_title = "Highperformingsites.com"
+      if @title.nil?
+        base_title
+      else
+        "#{base_title} | #{@title}"
+      end
+    end
+
   def fastest_sites
     # yslow_grades = Yslow2.find(:all, :order => 'o DESC', :select => 'DISTINCT url_id',  :limit => 10)
     yslow_grades = Yslow2.find_by_sql(["SELECT o, url_id FROM yslow2s ORDER BY o desc LIMIT 10"])
