@@ -8,17 +8,19 @@
     = stylesheet_link_tag "blueprint/print.css", :media => "print"
   %body
     .container
-      %h1
-        %a{:href => url_index_path, :title => "Site Speed Tracker"}
-          HIGHPERFORMINGSITES.COM
+      %header
+        %h1
+          %a{:href => url_index_path, :title => "Site Speed Tracker"}
+            HIGHPERFORMINGSITES.COM
+        = render :partial => 'layouts/header'
       #sub_container
-        #top_nav
+
         #sub_container_back
           #main_content
             .module
               = yield
-    #footer
-      .container
+    %footer.container
+      = render :partial => 'layouts/footer'
     = javascript_include_tag "jquery-1.4.2", "jqmodal", "application"
     = render :partial => 'analytics/google_analytics'
     = debug(params) if Rails.env.development?
