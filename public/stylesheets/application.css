@@ -213,3 +213,11 @@ div.grades {
   cursor: pointer;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd757), to(#ffaa22));
   background: -moz-linear-gradient(top, #ffec64, #ffb027); }
+
+#signup .hilite {
+  background: #ffb82f; }
+
+#signup aside.hilite {
+  background: #f9f8bc;
+  height: 95px;
+  padding: 10px; }

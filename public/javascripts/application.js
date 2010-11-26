@@ -21,9 +21,23 @@
 		$('#dialog').jqm({ajax:'@href',  trigger: 'a.showDialog'});
 		$('#dialog').jqm();
 	}
+	
+	window.HPS.Form = {
+	  focus:function(){
+	    $('#user_email').focus();
+	    $('#user_email').parent().addClass('hilite');
+	  },
+	  hilite:function(){
+	    
+	  }
+	}
+	
+	
+	
 })();
 		
 $(document).ready (function() {
 	window.HPS.externalLinks();
 	window.HPS.showComponentsModal();
+	window.HPS.Form.focus();
 });

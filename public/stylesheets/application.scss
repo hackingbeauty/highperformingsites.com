@@ -14,6 +14,7 @@ $silver_shadow: #cecbd0;
 $gold:#FFB82F;
 $warning: #cc3333;
 $success: #33cc33;
+$aside: #f9f8bc;
 
 /*	=Mixins
 	...................................................................... */
@@ -306,6 +307,15 @@ div.grades {
   background: -moz-linear-gradient(top, #FFEC64, #FFB027);
 }
 
+#signup .hilite {
+  background: $gold;
+}
+
+#signup aside.hilite {
+  background:$aside;
+  height:95px;
+  padding:10px;
+}
 
 
 
