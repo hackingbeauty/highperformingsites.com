@@ -13,12 +13,8 @@
           %a{:href => url_index_path, :title => "Site Speed Tracker"}
             HIGHPERFORMINGSITES.COM
         = render :partial => 'layouts/header'
-      #sub_container
 
-        #sub_container_back
-          #main_content
-            .module
-              = yield
+        = yield
     %footer.container
       = render :partial => 'layouts/footer'
     = javascript_include_tag "jquery-1.4.2", "jqmodal", "application"

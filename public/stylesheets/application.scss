@@ -1,154 +1,237 @@
 /*	=Colors
 	...................................................................... */
+
+$yellow: #F1DE00;
+$yellow_shadow: #d2c53a;
+$red: #FF4A24;
+$red_shadow: #d1503b; 
+$blue:#0071B3;
+$blue_shadow:#32659c;
+$black: #2D2C2E;
+$black_shadow:#282729;
+$silver: #E7E3E8;
+$silver_shadow: #cecbd0;
+$gold:#FFB82F;
+$warning: #cc3333;
+$success: #33cc33;
+
 /*	=Mixins
 	...................................................................... */
+
+@mixin rounded_corners{
+  # -moz-border-radius: 5px;
+  # -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+@mixin shadow {
+  -moz-box-shadow: 1px 2px 20px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 1px 2px 20px rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+
+@mixin shadow_enhanced {
+  -moz-box-shadow: 1px 2px 20px $gold;
+  -webkit-box-shadow: 1px 2px 20px $gold;
+  border-bottom: 1px solid $gold;
+}
+
 /*	=Main Styles
 	...................................................................... */
+	
 body {
-  background-color: #0071B3; }
+  background-color: #0071B3;
+}
 
 .container {
-  -moz-border-radius: 10px;
+  -moz-border-radius:10px;
   -webkit-border-radius: 5px;
   padding: 20px;
-  color: black; }
+  color: black;
+}
+
 
 ul {
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 .center {
-  text-align: center; }
+  text-align: center;
+}
 
 .container #sub_container {
   background-color: white;
   -moz-border-radius: 10px 10px;
   float: left;
-  padding: 20px;
-  /*border:1px solid #0071B3*/
+  padding: 20px;/*border:1px solid #0071B3*/;
   -moz-border-radius: 10px;
   -moz-box-shadow: 0 0 30px #999999;
   -webkit-border-radius: 10px;
   -webkit-box-shadow: 0 0 30px #999999;
-  width: 96%; }
+  width: 96%;
+}
 
 .container #sub_container #sub_container_back {
   -moz-border-radius: 5px 5px 5px 5px;
   background: none repeat scroll 0 0 #D4D4D4;
-  padding: 19px; }
+  padding: 19px;
+}
 
 h1 {
-  color: white; }
+  color: white;
+}
 
 .container h1 {
-  color: black; }
+  color: black;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  /*color:white;*/ }
+	/*color:white;*/
+}
 
 /*	=Link Styles
 	...................................................................... */
+
 a {
   text-decoration: underline;
   font-weight: bold;
-  color: white !important; }
+  color: white !important;
+}
 
 #sub_container a {
-  color: #009 !important; }
+  color: #009 !important;
+}
 
 h1 a {
-  text-decoration: none; }
+  text-decoration: none;
+}
+
 
 /*	=Table Styles
 	...................................................................... */
+
 table {
   background-color: white;
   clear: both;
-  font-size: 95%; }
+  font-size: 95%;
+}
 
 table thead th {
   background-color: #ecf1f0;
   background: white url(../images/gradients/gradient-table-heading.png) repeat-x scroll 0 0;
-  border: 1px solid #DDDDDD; }
+  border: 1px solid #DDDDDD;
+}
 
 table thead th.alexa {
   width: 100px;
-  text-align: center; }
+  text-align: center;
+}
 
 table thead th.yslow {
   width: 100px;
-  text-align: center; }
+  text-align: center;
+}
 
 table thead th.page_speed {
   width: 100px;
-  text-align: center; }
+  text-align: center;
+}
 
 table tbody tr {
-  height: 30px; }
+  height: 30px;
+}
 
 table tbody tr.even td {
-  background: #EDF3FE; }
+  background: #EDF3FE;
+}
+
 
 /*	=Module
 	...................................................................... */
+
 .container .module {
   background: white;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  padding: 10px 20px; }
+  padding: 10px 20px;
+}
 
 .container .module h2 {
   font-size: 1.5em;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .container h1 {
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+}
 
 /*	=Top Nav Styles
 	...................................................................... */
+
+
 /*	=Main Content Styles
 	...................................................................... */
+
 #main_content {
-  width: 100%; }
+  width: 100%;
+}
 
 .container #main_content h2 {
-  float: left; }
-
+  float: left;
+}
+	
 .container #main_content .pagination {
-  float: right; }
+  float: right;
+}
+
 
 /*	=Footer Styles
 	...................................................................... */
+	
 #footer {
-  clear: both; }
+  clear: both;
+}
+
 
 /*	=Show Page
 	...................................................................... */
-#show_page h2 {
-  margin-bottom: 40px; }
 
+#show_page h2 {
+  margin-bottom: 40px;
+}
+	
 div.grades {
   clear: both;
-  margin-top: 50px; }
+  margin-top: 50px;
+}
+
 
 /*	=Link Styles
 	...................................................................... */
+
 .jqmWindow {
-  position: relative; }
+  position: relative;
+}
 
 .jqmWindow a.jqmClose {
   position: absolute;
-  right: 10px; }
+  right: 10px;
+}
+
 
 /*	=Error Styles
 	...................................................................... */
+
 .field_with_errors {
   margin-top: 10px;
   padding: 2px;
   background-color: red;
-  display: table; }
+  display: table;
+}
 
 .field_with_errors label {
-  color: #fff; }
+  color: #fff;
+}
 
 #error_explanation {
   width: 400px;
@@ -156,7 +239,8 @@ div.grades {
   padding: 7px;
   padding-bottom: 12px;
   margin-bottom: 20px;
-  background-color: #f0f0f0; }
+  background-color: #f0f0f0;
+}
 
 #error_explanation h2 {
   text-align: left;
@@ -165,51 +249,85 @@ div.grades {
   font-size: 12px;
   margin: -7px;
   background-color: #c00;
-  color: #fff; }
+  color: #fff;
+}
 
 #error_explanation p {
   color: #333;
   margin-bottom: 0;
-  padding: 5px; }
+  padding: 5px;
+}
 
 #error_explanation ul li {
   font-size: 12px;
-  list-style: square; }
+  list-style: square;
+}
+
 
 /*	=Sign Up Form
 	...................................................................... */
+
 #signup .field {
-  clear: both; }
+  clear:both;
+}
 
 #signup .form_field {
-  # -moz-border-radius: 5px;
-  # -webkit-border-radius: 5px;
-  border-radius: 5px;
-  float: left;
-  width: 500px;
-  margin-bottom: 10px;
-  margin-right: 20px;
-  padding: 10px;
-  background: #e7e3e8;
-  border: 1px solid #cecbd0; }
+  @include rounded_corners;
+  float:left;
+  width:500px;
+  margin-bottom:10px;
+  margin-right:20px;
+  padding:10px;
+  background:$silver;
+  border:1px solid $silver_shadow;
+}
 
 #signup .form_field input {
-  display: block;
-  height: 40px;
-  width: 450px;
-  font-size: 30px; }
+  display:block;
+  height:40px;
+  width:450px;
+  font-size:30px;
+}
 
 #signup .instruction {
-  float: left;
-  width: 290px; }
+  float:left;
+  width:290px;
+}
 
 #signup .actions input {
   width: 130px;
   height: 45px;
-  color: #2d2c2e;
+  color: $black;
   border: 1px solid #FA2;
   font-weight: bold;
   font-size: 22px;
   cursor: pointer;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd757), to(#ffaa22));
-  background: -moz-linear-gradient(top, #ffec64, #ffb027); }
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#FFD757), to(#FA2));
+  background: -moz-linear-gradient(top, #FFEC64, #FFB027);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

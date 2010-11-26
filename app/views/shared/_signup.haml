@@ -1,0 +1,27 @@
+.module
+  #signup
+    %h1
+      Create an ccount and start tracking your app
+    - form_for @user do |f|
+      = render 'shared/error_messages'
+      .field
+        .form_field
+          = f.label :email
+          = f.text_field :email
+        %aside.instruction
+          You won't get spammed
+      .field
+        .form_field
+          = f.label :password
+          = f.password_field :password
+        %aside.instruction
+          Use a mix of upper and lowercase characters to create a strong password.
+      .field
+        .form_field
+          = f.label :password_confirmation, "Confirm"
+          = f.password_field :password_confirmation
+        %aside.instruction
+          If your password isn’t strong enough, you won’t be able to continue with signup.
+      .field
+        .actions
+          = f.submit "Sign Up"
