@@ -17,7 +17,6 @@
 	}
 	
 	window.HPS.showComponentsModal = function(){
-		//$('#dialog').jqm({modal: true, trigger: 'a.showDialog'});
 		$('#dialog').jqm({ajax:'@href',  trigger: 'a.showDialog'});
 		$('#dialog').jqm();
 	}
@@ -25,11 +24,9 @@
 	window.HPS.Form = {
 	  focus:function(){
 	    $('#user_email').focus();
-      // $('#user_email').parent().addClass('hilite');
 	  },
 	  hilite:function(){
 	    $('.input').focus(function(){
-	      console.log(this);
 	      $(this).parent().addClass('hilite');  
 	    });
 	    $('.input').blur(function(){

@@ -233,7 +233,7 @@ div.grades {
 }
 
 #signup input.error {
-  border:3px solid red;
+  border:3px solid $red;
   color: $black;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd4d4), to(#f69a9a));
   background: -moz-linear-gradient(top, #ffd4d4, #f69a9a);
@@ -299,13 +299,17 @@ div.grades {
   float:left;
 }
 
+#signup label {
+  font-size:20px;
+}
+
 #signup .form_field {
   @include rounded_corners;
   float:left;
   width:500px;
   margin-bottom:10px;
   margin-right:20px;
-  padding:10px;
+  padding:10px 0 20px 45px;
   background:$silver;
   border:1px solid $silver_shadow;
 }

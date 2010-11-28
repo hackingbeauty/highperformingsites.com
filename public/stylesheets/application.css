@@ -149,7 +149,7 @@ div.grades {
   border: none; }
 
 #signup input.error {
-  border: 3px solid red;
+  border: 3px solid #ff4a24;
   color: #2d2c2e;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd4d4), to(#f69a9a));
   background: -moz-linear-gradient(top, #ffd4d4, #f69a9a); }
@@ -208,6 +208,9 @@ div.grades {
   clear: both;
   float: left; }
 
+#signup label {
+  font-size: 20px; }
+
 #signup .form_field {
   # -moz-border-radius: 5px;
   # -webkit-border-radius: 5px;
@@ -216,7 +219,7 @@ div.grades {
   width: 500px;
   margin-bottom: 10px;
   margin-right: 20px;
-  padding: 10px;
+  padding: 10px 0 20px 45px;
   background: #e7e3e8;
   border: 1px solid #cecbd0; }
 

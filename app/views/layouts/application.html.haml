@@ -13,7 +13,10 @@
           %a{:href => url_index_path, :title => "Site Speed Tracker"}
             HIGHPERFORMINGSITES.COM
         = render :partial => 'layouts/header'
-
+        %section.round
+          - flash.each do |key, value|
+            .flash
+              = "#{key} #{value}"
         = yield
     %footer.container
       = render :partial => 'layouts/footer'

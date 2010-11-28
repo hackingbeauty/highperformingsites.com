@@ -79,7 +79,7 @@ describe UsersController do
     describe "success" do
       
       before(:each) do
-        @attr = { :name => "New User", :email => "user@example.com", :password => "foobar", :password_confirmation => "foobar"}
+        @attr = { :name => "", :email => "user@example.com", :password => "foobar", :password_confirmation => "foobar"}
       end
       
       it "should create a user" do
@@ -93,8 +93,45 @@ describe UsersController do
         response.should redirect_to(user_path(assigns(:user)))
       end
       
+      it "should have a welcome message" do
+        post :create, :user => @attr
+        flash[:success].should =~ /Welcome!  Start tracking your app!/i
+      end
+      
     end
     
   end
+  
+  
+  
+  # describe "POST 'check_email'" do
+  #   
+  #   describe "email already exists" do
+  #     
+  #     before(:each) do
+  #       @user = Factory(:user)
+  #     end
+  #     
+  #     it "should return false" do
+  #       post :check_email, :user => @user.email
+  #       @user.stub!(:find_by_email).and_return(false)
+  #       controller.should_receive(:render).with(hash_including(:json => false))
+  #     end
+  #     
+  #   end
+  #   
+  #   describe "email does not already exist" do
+  #   
+  #     before(:each) do
+  #       @user = Factory(:user)
+  #     end
+  #   
+  #     it "should return true" do
+  #       post :check_email, :user => @user.email
+  #     end
+  #     
+  #   end
+  #   
+  # end
   
 end
