@@ -223,7 +223,29 @@ div.grades {
 /*	=Error Styles
 	...................................................................... */
 
-.field_with_errors {
+#signup .error {
+  padding:0;
+}
+
+#signup label.error {
+  background: none;
+  border:none;
+}
+
+#signup input.error {
+  border:3px solid red;
+  color: $black;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd4d4), to(#f69a9a));
+  background: -moz-linear-gradient(top, #ffd4d4, #f69a9a);
+}
+
+#signup input.valid {
+  border:3px solid green;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d7ffd4), to(#adf69a));
+  background: -moz-linear-gradient(top, #d7ffd4, #adf69a);
+}
+
+/*.field_with_errors {
   margin-top: 10px;
   padding: 2px;
   background-color: red;
@@ -262,14 +284,19 @@ div.grades {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
-}
+}*/
 
 
 /*	=Sign Up Form
 	...................................................................... */
 
+#signup {
+  padding:10px;
+}
+
 #signup .field {
   clear:both;
+  float:left;
 }
 
 #signup .form_field {
@@ -290,9 +317,8 @@ div.grades {
   font-size:30px;
 }
 
-#signup .instruction {
-  float:left;
-  width:290px;
+#signup .actions {
+  clear:both;
 }
 
 #signup .actions input {
@@ -309,12 +335,6 @@ div.grades {
 
 #signup .hilite {
   background: $gold;
-}
-
-#signup aside.hilite {
-  background:$aside;
-  height:95px;
-  padding:10px;
 }
 
 

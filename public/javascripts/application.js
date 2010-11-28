@@ -35,13 +35,39 @@
 	    $('.input').blur(function(){
         $(this).parent().removeClass('hilite');
 	    });
-      // var inputs = $('.input');
-      // for(var i = 0, j = inputs.length; i<j; i++){
-      //   if($("#" +inputs[i].id +" ").parent().hasClass("hilite")){
-      //     console.log('it is ' + inputs[i].id);
-      //   }
-      // }
-
+	  },
+	  validate:function(){
+	    console.log("about to validate");
+      $('#new_user').validate({
+           rules: {
+             'user[email]': {
+               required: true,
+               email: true
+             },
+             'user[password]': {
+               required: true,
+               minlength: 6
+             },
+             'user[password_confirmation]': {
+               required: true,
+               equalTo: "#user_password"
+             }
+           },
+           messages: {
+             'user[email]': {
+               required: "Please enter your email address",
+               email: "Please enter a valid email address"
+             },
+             'user[password]': {
+               required: "Please provide a password",
+               minLength: "Your password must be at least 5 characters long"
+             },
+             'user[password_confirmation]': {
+               required: "Confirm your password",
+               equalTo: "Please enter the same password as above"
+             }
+           }
+      });
 	  }
 	}
 	
@@ -54,4 +80,5 @@ $(document).ready (function() {
 	window.HPS.showComponentsModal();
 	window.HPS.Form.hilite();
 	window.HPS.Form.focus();
+	window.HPS.Form.validate();
 });

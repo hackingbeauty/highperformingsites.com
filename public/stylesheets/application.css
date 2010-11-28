@@ -141,14 +141,34 @@ div.grades {
 
 /*	=Error Styles
 	...................................................................... */
-.field_with_errors {
+#signup .error {
+  padding: 0; }
+
+#signup label.error {
+  background: none;
+  border: none; }
+
+#signup input.error {
+  border: 3px solid red;
+  color: #2d2c2e;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd4d4), to(#f69a9a));
+  background: -moz-linear-gradient(top, #ffd4d4, #f69a9a); }
+
+#signup input.valid {
+  border: 3px solid green;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d7ffd4), to(#adf69a));
+  background: -moz-linear-gradient(top, #d7ffd4, #adf69a); }
+
+/*.field_with_errors {
   margin-top: 10px;
   padding: 2px;
   background-color: red;
-  display: table; }
+  display: table;
+}
 
 .field_with_errors label {
-  color: #fff; }
+  color: #fff;
+}
 
 #error_explanation {
   width: 400px;
@@ -156,7 +176,8 @@ div.grades {
   padding: 7px;
   padding-bottom: 12px;
   margin-bottom: 20px;
-  background-color: #f0f0f0; }
+  background-color: #f0f0f0;
+}
 
 #error_explanation h2 {
   text-align: left;
@@ -165,21 +186,27 @@ div.grades {
   font-size: 12px;
   margin: -7px;
   background-color: #c00;
-  color: #fff; }
+  color: #fff;
+}
 
 #error_explanation p {
   color: #333;
   margin-bottom: 0;
-  padding: 5px; }
+  padding: 5px;
+}
 
 #error_explanation ul li {
   font-size: 12px;
-  list-style: square; }
-
+  list-style: square;
+}*/
 /*	=Sign Up Form
 	...................................................................... */
+#signup {
+  padding: 10px; }
+
 #signup .field {
-  clear: both; }
+  clear: both;
+  float: left; }
 
 #signup .form_field {
   # -moz-border-radius: 5px;
@@ -199,9 +226,8 @@ div.grades {
   width: 450px;
   font-size: 30px; }
 
-#signup .instruction {
-  float: left;
-  width: 290px; }
+#signup .actions {
+  clear: both; }
 
 #signup .actions input {
   width: 130px;
@@ -216,8 +242,3 @@ div.grades {
 
 #signup .hilite {
   background: #ffb82f; }
-
-#signup aside.hilite {
-  background: #f9f8bc;
-  height: 95px;
-  padding: 10px; }

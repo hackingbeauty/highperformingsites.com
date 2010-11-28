@@ -8,20 +8,13 @@
         .form_field
           = f.label :email
           = f.text_field :email, :class => 'input', :tabindex => '1'
-        %aside.instruction
-          You won't get spammed
       .field
         .form_field
           = f.label :password
           = f.password_field :password, :class => 'input', :tabindex => '2'
-        %aside.instruction
-          Use a mix of upper and lowercase characters to create a strong password.
       .field
         .form_field
           = f.label :password_confirmation, "Confirm"
           = f.password_field :password_confirmation, :class => 'input', :tabindex => '3'
-        %aside.instruction
-          If your password isn’t strong enough, you won’t be able to continue with signup.
-      .field
-        .actions
-          = f.submit "Sign Up", :tabindex => '4'
+      .actions
+        = f.submit "Sign Up", :tabindex => '4'
