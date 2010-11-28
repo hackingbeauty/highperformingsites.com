@@ -25,10 +25,23 @@
 	window.HPS.Form = {
 	  focus:function(){
 	    $('#user_email').focus();
-	    $('#user_email').parent().addClass('hilite');
+      // $('#user_email').parent().addClass('hilite');
 	  },
 	  hilite:function(){
-	    
+	    $('.input').focus(function(){
+	      console.log(this);
+	      $(this).parent().addClass('hilite');  
+	    });
+	    $('.input').blur(function(){
+        $(this).parent().removeClass('hilite');
+	    });
+      // var inputs = $('.input');
+      // for(var i = 0, j = inputs.length; i<j; i++){
+      //   if($("#" +inputs[i].id +" ").parent().hasClass("hilite")){
+      //     console.log('it is ' + inputs[i].id);
+      //   }
+      // }
+
 	  }
 	}
 	
@@ -39,5 +52,6 @@
 $(document).ready (function() {
 	window.HPS.externalLinks();
 	window.HPS.showComponentsModal();
+	window.HPS.Form.hilite();
 	window.HPS.Form.focus();
 });
