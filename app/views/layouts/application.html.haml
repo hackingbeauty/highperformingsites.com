@@ -15,8 +15,8 @@
         = render :partial => 'layouts/header'
         %section.round
           - flash.each do |key, value|
-            .flash
-              = "#{key} #{value}"
+            %div{:class => "flash #{key}"}
+              = "#{value}"
         = yield
     %footer.container
       = render :partial => 'layouts/footer'
