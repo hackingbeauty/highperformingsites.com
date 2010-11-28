@@ -13,6 +13,7 @@ Sitespeed3::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   
+  match '/check_email', :to => 'users#check_email'
   match 'signup', :to => 'users#new'
   match '/all_components/:id' => 'yslow2#all_components', :as => :all_components
   match 'yslow' => 'beacon#yslow'

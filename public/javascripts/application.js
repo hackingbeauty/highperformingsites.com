@@ -37,12 +37,20 @@
 	    });
 	  },
 	  validate:function(){
-	    console.log("about to validate");
       $('#new_user').validate({
            rules: {
              'user[email]': {
                required: true,
-               email: true
+               email: true,
+               remote: {
+                 url: '/check_email',
+                 type: 'post',
+                 data: {
+                   username: function(){
+                     return $('#user_email').val();
+                   }
+                 }
+               }
              },
              'user[password]': {
                required: true,
@@ -56,7 +64,8 @@
            messages: {
              'user[email]': {
                required: "Please enter your email address",
-               email: "Please enter a valid email address"
+               email: "Please enter a valid email address",
+               remote: "That email address is already being used"
              },
              'user[password]': {
                required: "Please provide a password",
@@ -80,5 +89,5 @@ $(document).ready (function() {
 	window.HPS.showComponentsModal();
 	window.HPS.Form.hilite();
 	window.HPS.Form.focus();
-	window.HPS.Form.validate();
+  window.HPS.Form.validate();
 });

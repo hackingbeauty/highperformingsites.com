@@ -18,5 +18,17 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
+  def check_email
+    email = User.find_by_email(params[:user][:email])
+    respond_to do |response|
+      if email
+        response.js {render :json => false}
+      else
+        response.js {render :json => true}
+      end
+    end
+
+  end
 
 end
