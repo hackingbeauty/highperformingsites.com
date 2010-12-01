@@ -98,7 +98,7 @@ describe UsersController do
         flash[:success].should =~ /Welcome! Start tracking your app!/i
       end
       
-      it "should sign the user in" do
+      pending "should sign the user in" do
         post :create, :user => @attr
         controller.should be_signed_in
       end
@@ -106,37 +106,5 @@ describe UsersController do
     end
     
   end
-  
-  
-  
-  # describe "POST 'check_email'" do
-  #   
-  #   describe "email already exists" do
-  #     
-  #     before(:each) do
-  #       @user = Factory(:user)
-  #     end
-  #     
-  #     it "should return false" do
-  #       post :check_email, :user => @user.email
-  #       @user.stub!(:find_by_email).and_return(false)
-  #       controller.should_receive(:render).with(hash_including(:json => false))
-  #     end
-  #     
-  #   end
-  #   
-  #   describe "email does not already exist" do
-  #   
-  #     before(:each) do
-  #       @user = Factory(:user)
-  #     end
-  #   
-  #     it "should return true" do
-  #       post :check_email, :user => @user.email
-  #     end
-  #     
-  #   end
-  #   
-  # end
   
 end
