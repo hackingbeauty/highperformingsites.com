@@ -1,6 +1,7 @@
 class UrlController < ApplicationController
   
   def index
+    @title = "Measure Your App's Front-End Performance"
     @urls = Url.find(:all)    
   end
 
