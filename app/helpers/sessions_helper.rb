@@ -15,8 +15,6 @@ module SessionsHelper
   end
   
   def signed_in?
-    puts "inside signed_in? method and current_user is #{current_user}"
-    puts "signed_in? method. value is #{!current_user.nil?}"
     !current_user.nil?
   end
   
