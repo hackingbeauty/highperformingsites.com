@@ -1,10 +1,16 @@
 %header
   %h1
-    %a{:href => url_index_path, :title => "Site Speed Tracker"}
+    %a{:href => url_index_path, :title => "highperformingsites.com"}
       HIGHPERFORMINGSITES.COM
   %nav
     %ul
       %li
         = link_to "Home", root_path
-      %li
-        = link_to "Sign In", signin_path
+      - if signed_in?
+        %li
+          = link_to "Profile", current_user
+        %li
+          = link_to "Sign Out", signout_path, :method => :delete
+      - else
+        %li
+          = link_to "Sign In", signin_path
