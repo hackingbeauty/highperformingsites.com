@@ -1,0 +1,21 @@
+%h1
+  Edit User
+
+= form_for(@user) do |f|
+  = render 'shared/error_messages', :object => f.object
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :email
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  .actions
+    = f.submit "Update"
+    
+%div
+  = gravatar_for @user
+  %a{:href => "http://gravatar.com/emails"}
+    Change
