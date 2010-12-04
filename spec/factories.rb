@@ -4,3 +4,7 @@ Factory.define :user do |user|
   user.password               "yadayada"
   user.password_confirmation  "yadayada"
 end
+
+Factory.define :url do |url|
+  url.name                    "http://www.ebay.com"
+end
