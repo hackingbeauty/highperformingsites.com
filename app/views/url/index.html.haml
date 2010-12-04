@@ -1,7 +1,7 @@
 #sub_container
   #sub_container_back
     .module
-      %table
+      %table#dashboard
         %thead
           %th
             URL
@@ -31,14 +31,13 @@
               %td.load_time
                 = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).lt))
               %td.ec_pw
-                = u.yslow2s.find(:last).w
-
+                = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).w))
               %td.pc_pw
-                = u.yslow2s.find(:last).w_c
+                = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).w_c))
               %td.ec_r
-                = u.yslow2s.find(:last).r
+                = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).r))
               %td.pc_r
-                = u.yslow2s.find(:last).r_c
+                = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).r_c))
               %td.stats
                 = link_to 'Show', all_components_path(u), :class => 'showDialog'
               %td.comps
@@ -46,7 +45,7 @@
               %td.score
                 = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).o))
               %td.date
-                = u.yslow2s.find(:last).created_at.to_s(:short)
+                = (u.yslow2s.find(:last) == nil) ? 'N/A' : u.yslow2s.find(:last).created_at.to_s(:short)
       #dialog.jqmWindow
 
 

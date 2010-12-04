@@ -2,3 +2,60 @@
   %h1
     = gravatar_for @user
     = @user.name
+  #sub_container
+    #sub_container_back
+      .module
+        %table#dashboard
+          %thead
+            %th
+              URL
+            %th
+              Load Time
+            %th
+              Empty Cache Page Weight
+            %th
+              Primed Cache Page Weight
+            %th
+              Empty Cache Requests
+            %th
+              Primed Cache Requests
+            %th
+              Stats
+            %th
+              Components
+            %th
+              YSlow Score
+            %th
+              Recorded Date
+          %tbody
+            - @urls.each do |u|
+              %tr{:class=>"#{cycle('odd', 'even')} row"}
+                %td.url      
+                  = link_to u.url_name, u
+                %td.load_time
+                  = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).lt))
+                %td.ec_pw
+                  = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).w))
+                %td.pc_pw
+                  = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).w_c))
+                %td.ec_r
+                  = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).r))
+                %td.pc_r
+                  = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).r_c))
+                %td.stats
+                  = link_to 'Show', all_components_path(u), :class => 'showDialog'
+                %td.comps
+                  = link_to 'Components', all_components_path(u)
+                %td.score
+                  = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).o))
+                %td.date
+                  = (u.yslow2s.find(:last) == nil) ? 'N/A' : u.yslow2s.find(:last).created_at.to_s(:short)
+        #dialog.jqmWindow
+
+
+
+
+
+
+
+

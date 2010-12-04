@@ -9,6 +9,7 @@ class CreateUrls < ActiveRecord::Migration
       t.integer :country_reach_permillion
       t.integer :country_page_views_permillion
       t.integer :country_page_views_peruser
+      t.integer :user_id
       t.timestamps
     end
     # add_index :urls, :last_update, :unique => true

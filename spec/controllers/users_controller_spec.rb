@@ -34,6 +34,11 @@ describe UsersController do
       response.should have_selector("h1>img", :class => "gravatar")
     end
     
+    it "should have the user's dashboard" do
+      get :show, :id => @user
+      response.should have_selector("table", :id => "dashboard")
+    end
+    
   end
   
   describe "GET 'new'" do

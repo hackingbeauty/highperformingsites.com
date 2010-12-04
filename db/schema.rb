@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20101121065641) do
     t.integer  "country_reach_permillion"
     t.integer  "country_page_views_permillion"
     t.integer  "country_page_views_peruser"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
