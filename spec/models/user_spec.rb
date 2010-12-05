@@ -7,7 +7,8 @@ describe User do
       :name => "Example User", 
       :email => "user@example.com",
       :password => "password",
-      :password_confirmation => "password"
+      :password_confirmation => "password",
+      :api_key => "6e80a5bf1f6e165f65965076290a61638dfde0f2972474d73b954a10962a392f"
     }
   end
   
@@ -20,10 +21,6 @@ describe User do
   #   no_name_user.should_not be_valid
   # end
   # 
-  it "should require an email address" do
-    no_email_user = User.new(@attr.merge(:email => ""))
-    no_email_user.should_not be_valid
-  end
   
   # it "should reject names that are too long" do
   #   long_name = "a" * 51
@@ -31,6 +28,11 @@ describe User do
   #   long_name_user.should_not be_valid
   # end
   
+  it "should require an email address" do
+    no_email_user = User.new(@attr.merge(:email => ""))
+    no_email_user.should_not be_valid
+  end
+
   it "should accept valid email addresses" do
     addresses = %w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
     addresses.each do |address|
@@ -133,6 +135,23 @@ describe User do
     end
     
   end
+  
+  describe "api key generation" do
+    
+    before(:each) do
+      @user = User.create!(@attr)
+    end
+    
+    it "should have an api_key attribute" do
+      @user.should respond_to(:api_key)
+    end
+    
+    it "should set the api_key" do
+      @user.api_key.should_not be_blank
+    end
+    
+  end
+  
   
 end
 

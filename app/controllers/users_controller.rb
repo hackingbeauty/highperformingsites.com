@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome! Start tracking your app!"
+      flash[:success] = "Welcome! Start tracking your app! This is your KEY: #{@user.api_key}"
       redirect_to @user
     else
       @title = "Sign Up"

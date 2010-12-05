@@ -20,7 +20,8 @@ class User < ActiveRecord::Base
                         :confirmation => true,
                         :length       => { :within => 6..40 }
                         
-  before_save :encrypt_password
+  before_save :encrypt_password, :generate_api_key
+  #after_save :generate_api_key
   
   # Return true if the user's password matches the submitted password.
   def has_password?(submitted_password)
@@ -51,6 +52,10 @@ class User < ActiveRecord::Base
     
     def encrypt(passwd)
       secure_hash("#{self.salt}--#{passwd}")
+    end
+    
+    def generate_api_key
+      self.api_key = secure_hash("#{Time.now.utc}--#{self.email}")
     end
     
     def secure_hash(passwd)
