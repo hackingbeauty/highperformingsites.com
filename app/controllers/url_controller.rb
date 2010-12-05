@@ -6,11 +6,11 @@ class UrlController < ApplicationController
   end
 
   def show
+    url = Url.find(params[:id])
     @the_url = Url.find(params[:id])
-    @yslow2_scores = @the_url.yslow2s.find(:all)
-    @page_speed_scores = @the_url.page_speeds.find(:all)
+    @yslow2_scores = url.yslow2s.find(:all)
+    @page_speed_scores = url.page_speeds.find(:all)
   end
-  
   
   private
 
