@@ -19,10 +19,10 @@ describe "LayoutLinks" do
   
   describe "when not signed in" do
     
-    it "should have a signin link" do
+    it "should have a signin button" do
       visit root_path
-      response.should have_selector("a",  :href => signin_path,
-                                          :content => "Sign In")
+      response.should have_selector("input",  :type => "submit",
+                                              :value => "Sign In")
     end
     
   end

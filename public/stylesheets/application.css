@@ -49,9 +49,16 @@ h1, h2, h3, h4, h5, h6 {
 /*	=Header Styles
 	...................................................................... */
 header {
-  border: 1px solid black;
+  position: relative;
+  height: 100px;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#2d2c2e), to(#282729));
   background: -moz-linear-gradient(top, #2d2c2e, #282729); }
+
+header h1 {
+  position: absolute;
+  top: 35px;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px; }
 
 /*	=Link Styles
 	...................................................................... */
@@ -107,9 +114,6 @@ table tbody tr.even td {
 .container .module h2 {
   font-size: 1.5em;
   font-weight: bold; }
-
-.container h1 {
-  margin-bottom: 1em; }
 
 /*	=Top Nav Styles
 	...................................................................... */
@@ -241,15 +245,50 @@ div.grades {
   clear: both; }
 
 #signup .actions input {
-  width: 130px;
-  height: 45px;
+  /*  width: 130px;*/
+  /*  height: 45px;*/
   color: #2d2c2e;
+  font-size: 22px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd757), to(#ffaa22));
+  background: -moz-linear-gradient(top, #ffec64, #ffb027);
   border: 1px solid #FA2;
   font-weight: bold;
-  font-size: 22px;
   cursor: pointer;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd757), to(#ffaa22));
-  background: -moz-linear-gradient(top, #ffec64, #ffb027); }
+  padding: 5px 10px; }
 
 #signup .hilite {
   background: #ffb82f; }
+
+/*	=Sign In Styles
+	...................................................................... */
+header #sign-in {
+  position: absolute;
+  right: 0;
+  top: 18px;
+  width: 470px; }
+
+header #sign-in .field {
+  margin-right: 20px; }
+
+header #sign-in label {
+  display: block; }
+
+header #sign-in .field input {
+  height: 20px; }
+
+header #sign-in .field,
+header #sign-in .actions {
+  float: left; }
+
+header #sign-in label {
+  color: white;
+  margin-right: 5px; }
+
+header #sign-in .actions input {
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd757), to(#ffaa22));
+  background: -moz-linear-gradient(top, #ffec64, #ffb027);
+  border: 1px solid #FA2;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-top: 22px; }
