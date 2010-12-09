@@ -7,8 +7,8 @@
     = stylesheet_link_tag "blueprint/screen.css", "application.css", "jqmodal.css", :media => "screen, projection"
     = stylesheet_link_tag "blueprint/print.css", :media => "print"
   %body
+    = render :partial => 'layouts/header'
     .container
-      = render :partial => 'layouts/header'
       %section.round
         - flash.each do |key, value|
           %div{:class => "flash #{key}"}

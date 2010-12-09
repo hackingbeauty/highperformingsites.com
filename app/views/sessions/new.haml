@@ -1,14 +1,1 @@
-%h1
-  Sign In
-= form_for(:session, :url => sessions_path) do |f|
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :password
-    = f.password_field :password
-  .actions
-    = f.submit "Sign In"
-%p
-  New user?
-  = link_to "Sign up now!", signup_path
+= render :partial => 'shared/signin'

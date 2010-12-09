@@ -9,7 +9,7 @@ describe "Users" do
          fill_in :user_email,                   :with => ""
          fill_in :user_password,                :with => ""
          fill_in :user_password_confirmation,   :with => ""
-         click_button
+         click_button "Sign Up"
          response.should render_template('users/new')
          response.should have_selector("div#error_explanation")
         end.should_not change(User,:count)
@@ -22,7 +22,7 @@ describe "Users" do
          fill_in :user_email,                   :with => "user@example.com"
          fill_in :user_password,                :with => "foobar"
          fill_in :user_password_confirmation,   :with => "foobar"
-         click_button
+         click_button "Sign Up"
          response.should have_selector("div.flash.success", :content => "Welcome! Start tracking your app!")
          response.should render_template('users/show')
        end.should change(User,:count).by(1)

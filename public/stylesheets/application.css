@@ -37,13 +37,21 @@ ul {
   padding: 19px; }
 
 h1 {
-  color: white; }
+  color: white;
+  font-size: 2em; }
 
 .container h1 {
   color: black; }
 
 h1, h2, h3, h4, h5, h6 {
   /*color:white;*/ }
+
+/*	=Header Styles
+	...................................................................... */
+header {
+  border: 1px solid black;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#2d2c2e), to(#282729));
+  background: -moz-linear-gradient(top, #2d2c2e, #282729); }
 
 /*	=Link Styles
 	...................................................................... */
@@ -212,9 +220,9 @@ div.grades {
   font-size: 20px; }
 
 #signup .form_field {
-  # -moz-border-radius: 5px;
-  # -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  /*  border-radius: 5px;*/
   float: left;
   width: 500px;
   margin-bottom: 10px;

@@ -20,9 +20,9 @@ $aside: #f9f8bc;
 	...................................................................... */
 
 @mixin rounded_corners{
-  # -moz-border-radius: 5px;
-  # -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+/*  border-radius: 5px;*/
 }
 
 @mixin shadow {
@@ -80,6 +80,7 @@ ul {
 
 h1 {
   color: white;
+  font-size:2em;
 }
 
 .container h1 {
@@ -88,6 +89,15 @@ h1 {
 
 h1, h2, h3, h4, h5, h6 {
 	/*color:white;*/
+}
+
+/*	=Header Styles
+	...................................................................... */
+
+header {
+  border:1px solid black;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from($black), to($black_shadow));
+  background: -moz-linear-gradient(top, $black, $black_shadow); 
 }
 
 /*	=Link Styles
