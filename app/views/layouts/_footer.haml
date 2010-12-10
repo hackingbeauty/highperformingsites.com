@@ -1,7 +1,12 @@
-%footer.container
-  %nav
-    %ul
-      %li
-        = link_to "About", about_path
-      %li
-        = link_to "Contact", contact_path
+%footer
+  .container
+    %nav
+      %ul
+        %li.cr
+          Copyright © 2010
+          %a{:href => "http://www.fromthought2web.com"}
+            From Thought 2 Web 
+        %li.lnk
+          = link_to "About", about_path
+        %li.lnk
+          = link_to "Contact", contact_path

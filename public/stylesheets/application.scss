@@ -50,14 +50,15 @@ $aside: #f9f8bc;
 	...................................................................... */
 	
 body {
-  background-color: #0071B3;
+/*  background-color: #0071B3;
+*/
+  background-color: #f2f2f2;
+  color:$black;
 }
 
 .container {
-  -moz-border-radius:10px;
-  -webkit-border-radius: 5px;
-  padding: 20px;
-  color: black;
+  margin:0 auto;
+  width:970px;
 }
 
 
@@ -70,15 +71,14 @@ ul {
 }
 
 .container #sub_container {
+  @include rounded_corners;
   background-color: white;
-  -moz-border-radius: 10px 10px;
-  float: left;
-  padding: 20px;/*border:1px solid #0071B3*/;
-  -moz-border-radius: 10px;
-  -moz-box-shadow: 0 0 30px #999999;
-  -webkit-border-radius: 10px;
-  -webkit-box-shadow: 0 0 30px #999999;
-  width: 96%;
+  border:1px solid $silver_shadow;
+  padding: 20px;
+  -webkit-box-shadow: 0 0 10px #999999;
+  -moz-box-shadow: 0 0 10px #999999;
+  
+  margin-top:20px;
 }
 
 .container #sub_container #sub_container_back {
@@ -92,7 +92,7 @@ h1 {
   font-size:2em;
 }
 
-.container h1 {
+h1 {
   color: black;
 }
 
@@ -104,10 +104,14 @@ h1, h2, h3, h4, h5, h6 {
 	...................................................................... */
 
 header {
-  position:relative;
   height:100px;
   background: -webkit-gradient(linear, 0 0, 0 100%, from($black), to($black_shadow));
-  background: -moz-linear-gradient(top, $black, $black_shadow); 
+  background: -moz-linear-gradient(top, $black, $black_shadow);
+}
+
+header .container {
+  position:relative;
+  height:100%;
 }
 
 header h1 {
@@ -115,6 +119,15 @@ header h1 {
   top:35px;
   border-bottom:1px solid white;
   padding-bottom:5px;
+  color:white;
+}
+
+header h1 a {
+  color:inherit;
+}
+
+header h1 a:hover {
+  color:$gold;
 }
 
 /*	=Link Styles
@@ -123,7 +136,8 @@ header h1 {
 a {
   text-decoration: underline;
   font-weight: bold;
-  color: white !important;
+  color: $black;
+/*  color: white !important;*/
 }
 
 #sub_container a {
@@ -212,10 +226,31 @@ table tbody tr.even td {
 /*	=Footer Styles
 	...................................................................... */
 	
-#footer {
-  clear: both;
+footer {
+  border-top:1px solid $silver_shadow;
+/*  background-color:white;*/
+  margin-top:20px;
+  clear:both;
+  height:100%;
 }
 
+footer ul {
+  padding-left: 0;
+}
+
+footer li {
+  float:left;
+
+}
+
+footer li.cr {
+  padding-right:10px;
+}
+
+footer li.lnk {
+  padding:0 10px;
+  border-left:1px solid $silver_shadow;
+}
 
 /*	=Show Page
 	...................................................................... */
@@ -396,6 +431,7 @@ header #sign-in label {
 
 header #sign-in .actions input {
   @include button;
+  @include rounded_corners;
   margin-top:22px;
 }
 
