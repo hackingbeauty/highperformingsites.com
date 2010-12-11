@@ -63,10 +63,14 @@ header .container {
   height: 100%; }
 
 header h1 {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  /*  border-radius: 5px;*/
+  border: 1px solid white;
+  padding: 15px;
   position: absolute;
-  top: 35px;
+  top: 22px;
   border-bottom: 1px solid white;
-  padding-bottom: 5px;
   color: white; }
 
 header h1 a {
