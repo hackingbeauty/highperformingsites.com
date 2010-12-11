@@ -14,25 +14,25 @@ body {
   margin: 0 auto;
   width: 970px; }
 
+#content {
+  margin-top: 20px; }
+
 ul {
   list-style-type: none; }
 
 .center {
   text-align: center; }
 
-.container #sub_container {
+#sub_container {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   /*  border-radius: 5px;*/
-  background-color: white;
-  border: 1px solid #cecbd0;
-  padding: 20px;
-  -webkit-box-shadow: 0 0 10px #999999;
-  -moz-box-shadow: 0 0 10px #999999;
-  margin-top: 20px; }
+  background-color: white; }
 
 .container #sub_container #sub_container_back {
-  -moz-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  /*  border-radius: 5px;*/
   background: none repeat scroll 0 0 #D4D4D4;
   padding: 19px; }
 
@@ -45,6 +45,11 @@ h1 {
 
 h1, h2, h3, h4, h5, h6 {
   /*color:white;*/ }
+
+#flash {
+  float: left;
+  width: 550px;
+  border: 1px solid #33cc33; }
 
 /*	=Header Styles
 	...................................................................... */
@@ -119,16 +124,21 @@ table tbody tr.even td {
 
 /*	=Module
 	...................................................................... */
-.container .module {
-  background: white;
+.module {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  padding: 10px 20px; }
+  /*  border-radius: 5px;*/
+  -moz-box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  background: white;
+  padding: 10px 20px;
+  margin-bottom: 20px; }
 
-.container .module h2 {
+/*.module h2 {
   font-size: 1.5em;
-  font-weight: bold; }
-
+  font-weight: bold;
+}*/
 /*	=Top Nav Styles
 	...................................................................... */
 /*	=Main Content Styles
@@ -326,3 +336,29 @@ header #sign-in .actions input {
   -webkit-border-radius: 5px;
   /*  border-radius: 5px;*/
   margin-top: 22px; }
+
+/*	=Main Nav Styles
+	...................................................................... */
+nav#main-nav {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  /*  border-radius: 5px;*/
+  position: absolute;
+  padding: 5px 0;
+  right: 0;
+  top: 35px;
+  background-color: #0071b3; }
+
+nav#main-nav li {
+  float: left;
+  margin-right: 20px; }
+
+/*	=User Page Styles
+	...................................................................... */
+section#profile {
+  float: right;
+  width: 320px; }
+
+section#beacon-data,
+section#trend {
+  clear: both; }

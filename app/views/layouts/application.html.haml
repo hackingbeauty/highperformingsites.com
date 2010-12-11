@@ -8,8 +8,10 @@
     = stylesheet_link_tag "blueprint/print.css", :media => "print"
   %body
     = render :partial => 'layouts/header'
-    .container
-      %section.round
+    #content.container
+      %section#flash.module
+        %h2
+          Status
         - flash.each do |key, value|
           %div{:class => "flash #{key}"}
             = "#{value}"
