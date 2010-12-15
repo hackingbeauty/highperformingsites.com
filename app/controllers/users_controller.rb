@@ -3,20 +3,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @title = @user.name
     @urls = @user.urls
-    
-    # puts @user.urls.find(:last).yslow2s.find(:last).lt
-    # puts @user.urls.find(:first).yslow2s.find(:last).created_at.to_i
-    # puts @user.urls.find(:last).yslow2s.find(:last).created_at.to_i
-    
-   # puts @user.urls.find(:first).yslow2s.all(:select => "lt, created_at").to_json
-    
-   # yada = @user.urls.find(:first).yslow2s.find(:all, :select => "lt, created_at").map{|x| x.lt, x.created_at.to_i}.to_json
-    
-    
-    yada = @user.urls.find(:first).yslow2s.find(:all, :select => "lt, created_at").map{|x| {"loadTime" => x.lt, "timeStamp" => x.created_at.to_i}.to_json}
 
-    puts "yada is #{yada}"
-    
+    # puts @user.urls.find(:first).yslow2s.all(:select => "lt, created_at").to_json
+
+    #yada = @user.urls.find(:first).yslow2s.find(:all, :select => "lt, created_at").map{|x| {"loadTime" => x.lt, "timeStamp" => x.created_at.to_i}.to_json}
+
     # JavaScript JSON Object I want:
     # var coordinate = { "coordinates" : [ {"loadTime":"1.3.2424","timeStamp":"1231233424234"},
     #                                      {"loadTime":"3.25234","timeStamp":"23423423423423"} ]

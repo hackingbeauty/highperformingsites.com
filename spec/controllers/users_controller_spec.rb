@@ -24,14 +24,19 @@ describe UsersController do
       response.should have_selector("title", :content => @user.name)
     end
     
-    it "should include the user's name" do
+    pending "should include the user's name" do
       get :show, :id => @user
       response.should have_selector("h1", :content => @user.name)
     end
     
+    it "should include the user's email" do
+      get :show, :id => @user
+      response.should have_selector("h2", :content => @user.email)
+    end
+    
     it "should have a profile image" do
       get :show, :id => @user
-      response.should have_selector("h1>img", :class => "gravatar")
+      response.should have_selector("h2>img", :class => "gravatar")
     end
     
     it "should have the user's dashboard" do
