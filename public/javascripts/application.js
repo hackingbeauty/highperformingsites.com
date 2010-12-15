@@ -77,6 +77,12 @@
 	  }
 	}
 	
+	window.HPS.createTrendsChart = function(){
+    $.jqplot('chartdiv',  [[[1, 2],[3,5.12],[5,13.1],[7,33.6],[9,85.9],[11,719.9]]],
+    { title:'Average Load Time',
+      series:[{color:'#FA2'}]
+    });
+	}
 	
 	
 })();
@@ -87,4 +93,5 @@ $(document).ready (function() {
 	window.HPS.Form.hilite();
 	window.HPS.Form.focus();
   window.HPS.Form.validate();
+  window.HPS.createTrendsChart();
 });
