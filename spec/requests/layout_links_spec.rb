@@ -4,7 +4,7 @@ describe "LayoutLinks" do
 
   it "should have a Home page at '/'" do
     get "/"
-    response.should have_selector("title", :content => "Measure Your App's Front-End Performance")
+    response.should have_selector("title", :content => "Create an account and start tracking your app")
   end
 
   it "should have a Contact page at /contact'" do

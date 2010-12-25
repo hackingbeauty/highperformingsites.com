@@ -12,7 +12,7 @@ describe PagesController do
     it "should have the right title" do
       get 'home'
       response.should have_selector("title",
-                        :content => "Highperformingsites.com | Home")
+                        :content => "Highperformingsites.com | Create an account and start tracking your app")
     end
   end
 

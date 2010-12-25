@@ -3,9 +3,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @title = @user.name
     @urls = @user.urls
-
-    puts "#the urls are #{@urls}"
-
     # puts @user.urls.find(:first).yslow2s.all(:select => "lt, created_at").to_json
 
     #yada = @user.urls.find(:first).yslow2s.find(:all, :select => "lt, created_at").map{|x| {"loadTime" => x.lt, "timeStamp" => x.created_at.to_i}.to_json}
@@ -27,7 +24,6 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = "Welcome! Start tracking your app! This is your KEY: #{@user.api_key}"
-      # redirect_to @user
       redirect_to dashboard_show_path
     else
       @title = "Sign Up"

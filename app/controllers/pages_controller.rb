@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
-    @title = "Home"
+    @title = "Create an account and start tracking your app"
+    @user = User.new
   end
 
   def contact

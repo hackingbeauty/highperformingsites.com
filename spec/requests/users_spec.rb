@@ -24,7 +24,7 @@ describe "Users" do
          fill_in :user_password_confirmation,   :with => "foobar"
          click_button "Sign Up"
          response.should have_selector("div.flash.success", :content => "Welcome! Start tracking your app!")
-         response.should render_template('users/show')
+         response.should render_template('dashboard/show')
        end.should change(User,:count).by(1)
      end
    end

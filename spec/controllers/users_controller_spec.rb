@@ -39,11 +39,6 @@ describe UsersController do
       response.should have_selector("h2>img", :class => "gravatar")
     end
     
-    it "should have the user's dashboard" do
-      get :show, :id => @user
-      response.should have_selector("table", :id => "dashboard")
-    end
-    
   end
   
   describe "GET 'new'" do
@@ -100,7 +95,8 @@ describe UsersController do
       
       it "should redirect to the user show page" do
         post :create, :user => @attr
-        response.should redirect_to(user_path(assigns(:user)))
+        # response.should redirect_to(user_path(assigns(:user)))
+        response.should redirect_to(dashboard_show_path)
       end
       
       it "should have a welcome message" do
