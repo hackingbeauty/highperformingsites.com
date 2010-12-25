@@ -6,10 +6,8 @@ class UrlController < ApplicationController
   end
 
   def show
-    url = Url.find(params[:id])
     @the_url = Url.find(params[:id])
-    @yslow2_scores = url.yslow2s.find(:all)
-    @page_speed_scores = url.page_speeds.find(:all)
+    @urls = current_user.urls.find_by_id(params[:id]).yslow2s.find(:all, :order => 'lt DESC')
   end
   
   private

@@ -1,42 +1,49 @@
-%h2
-  = @the_url.name
-#sub_container
-  #sub_container_back
-    .module
-      %table#dashboard
-        %thead
-          %th
-            Load Time
-          %th
-            Empty Cache Page Weight
-          %th
-            Primed Cache Page Weight
-          %th
-            Empty Cache Requests
-          %th
-            Primed Cache Requests
-          %th
-            Stats
-          %th
-            Components
-          %th
-            YSlow Score
-          %th
-            Recorded Date
-        %tbody
-          - @yslow2_scores.each do |u|
-            %tr
-              = u.url.name
-            %tr
-              %td
-                = u.lt
-              %td
-                = u.w
-                
-
-
-
-
-
-
-
+%section#beacon-data.module
+  %h2
+    = "History for #{@the_url.name}"
+  %table#dashboard
+    %thead
+      %th
+        URL
+      %th
+        Load Time
+      %th
+        Empty Cache Page Weight
+      %th
+        Primed Cache Page Weight
+      %th
+        Empty Cache Requests
+      %th
+        Primed Cache Requests
+      %th
+        Stats
+      %th
+        Components
+      %th
+        YSlow Score
+      %th
+        Recorded Date
+    %tbody
+      - @urls.each do |u|
+        %tr{:class=>"#{cycle('odd', 'even')} row"}
+          %td.url      
+            = link_to u.url.name
+          %td
+            = u.lt
+          %td
+            = u.w
+          %td
+            = u.w_c
+          %td
+            = u.r
+          %td
+            = u.r_c
+          %td
+            = link_to 'Show', all_components_path(u), :class => 'showDialog'
+          %td
+            = link_to 'Components', all_components_path(u)
+          %td
+            = u.o
+          %td
+            = u.created_at.to_s(:short)
+          

@@ -47,8 +47,7 @@ h1, h2, h3, h4, h5, h6 {
   /*color:white;*/ }
 
 #flash {
-  float: left;
-  width: 550px;
+  /*  width:550px;*/
   border: 1px solid #33cc33; }
 
 /*	=Header Styles

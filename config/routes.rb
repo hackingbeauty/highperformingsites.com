@@ -1,4 +1,6 @@
 Sitespeed3::Application.routes.draw do
+  get "dashboard/show"
+
   get "sessions/new"
 
   get "pages/home"

@@ -9,12 +9,13 @@
   %body
     = render :partial => 'layouts/header'
     #content.container
-      %section#flash.module
-        %h2
-          Status
-        - flash.each do |key, value|
-          %div{:class => "flash #{key}"}
-            = "#{value}"
+      = if flash[:warning] || flash[:notice] || flash[:success] || flash[:error]
+        %section#flash.module
+          %h2
+            Status
+          - flash.each do |key, value|
+            %div{:class => "flash #{key}"}
+              = "#{value}"
       = yield
     = render :partial => 'layouts/footer'
     = javascript_include_tag "jquery-1.4.2", "jqmodal", "jquery.validate.min", "application", "jquery.jqplot.min.js"
