@@ -1,7 +1,9 @@
 %h2
   All Users
+= will_paginate
 %ul
   - @users.each do |user|
     %li
       = gravatar_for user, :size => 30
       = link_to user.email, user
+= will_paginate
