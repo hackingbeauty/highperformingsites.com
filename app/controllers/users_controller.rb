@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, :only => [:edit, :update]
+  before_filter :authenticate, :only => [:index, :edit, :update]
   before_filter :correct_user, :only => [:edit, :update]
   
   def show
@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     #                                      {"loadTime":"3.25234","timeStamp":"23423423423423"} ]
     #                  }
   
+  end
+
+  def index
+    @title = "All Users"
+    @users = User.all
   end
 
   def new
