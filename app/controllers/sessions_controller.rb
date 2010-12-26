@@ -12,8 +12,7 @@ class SessionsController < ApplicationController
       render 'new'
     else
       sign_in user
-      # redirect_to user
-      redirect_to dashboard_show_path
+      redirect_back_or dashboard_show_path
     end
   end
   
