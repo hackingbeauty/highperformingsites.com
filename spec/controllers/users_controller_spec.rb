@@ -142,6 +142,7 @@ describe UsersController do
     
     before(:each) do
       @user = Factory(:user)
+      test_sign_in(@user)
     end
     
     describe "failure" do
@@ -185,6 +186,24 @@ describe UsersController do
         flash[:success].should =~ /updated/
       end
     
+    end
+  
+  end
+  
+  describe "authentication or edit/update pages" do
+    
+    before(:each) do
+      @user = Factory(:user)
+    end
+    
+    it "should deny access to 'edit'" do
+      get :edit, :id => @user
+      response.should redirect_to(signin_path)
+    end
+    
+    it "should deny access to 'update'" do
+      get :update, :id => @user, :user => {}
+      response.should redirect_to(signin_path)
     end
   
   end
