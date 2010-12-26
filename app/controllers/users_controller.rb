@@ -31,6 +31,15 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    @user = User.find(params[:id])
+    @title = "Edit user"
+  end
+  
+  def update
+    
+  end
+  
   def check_email
     email = User.find_by_email(params[:user][:email])
     respond_to do |response|

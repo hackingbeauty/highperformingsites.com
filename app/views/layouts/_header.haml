@@ -1,13 +1,19 @@
 %header
   .container
     %h1#logo
-      %a{:href => url_index_path, :title => "highperformingsites.com"}
-        HIGHPERFORMINGSITES.COM    
+      - if current_user
+        %a{:href => dashboard_show_path, :title => "highperformingsites.com"}
+          HIGHPERFORMINGSITES.COM
+      - else
+        %a{:href => root_path, :title => "highperformingsites.com"}
+          HIGHPERFORMINGSITES.COM
     - if signed_in?
       %nav#main-nav
         %ul
           %li
             = link_to "Dashboard", dashboard_show_path
+          %li
+            = link_to "Settings", edit_user_path(current_user)
           %li
             = link_to "Profile", current_user
           %li

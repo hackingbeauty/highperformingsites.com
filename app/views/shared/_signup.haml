@@ -3,7 +3,7 @@
     %h1
       Create an account and start tracking your app
     = form_for @user do |f|
-      = render 'shared/error_messages'
+      = render 'shared/error_messages', :object => f.object
       .field
         .form_field
           = f.label :email
