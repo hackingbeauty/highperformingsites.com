@@ -8,3 +8,7 @@ end
 Factory.define :url do |url|
   url.name                    "http://www.ebay.com"
 end
+
+Factory.sequence :email do |n|
+  "person-#{n}@example.com"
+end
