@@ -19,7 +19,8 @@
               = "#{value}"
       = yield
     = render :partial => 'layouts/footer'
-    = javascript_include_tag "jquery-1.4.2", "jqmodal", "jquery.validate.min", "prototype", "effects", "dragdrop", "rails", "jquery.jqplot.min", "application"
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js", :type => "text/javascript"}
+    = javascript_include_tag "rails", "jqmodal", "jquery.validate.min", "jquery.jqplot.min", "application"
     /[if IE]
       = javascript_include_tag "excanvas.min.js"
     = render :partial => 'analytics/google_analytics'
