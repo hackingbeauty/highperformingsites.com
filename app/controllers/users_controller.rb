@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, :only => [:index, :edit, :update]
-  before_filter :correct_user, :only => [:edit, :update]
+  before_filter :authenticate,  :only => [:index, :edit, :update]
+  before_filter :correct_user,  :only => [:edit, :update]
+  before_filter :admin_user,    :only => :destroy
   
   def show
     @user = User.find(params[:id])
@@ -55,6 +56,12 @@ class UsersController < ApplicationController
     end
   end
   
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User destroyed."
+    redirect_to users_path
+  end
+  
   def check_email
     email = User.find_by_email(params[:user][:email])
     respond_to do |response|
@@ -76,6 +83,12 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)
+    end
+    
+    def admin_user
+      puts "inside admin_user"
+      puts "current_user.admin? is #{current_user.admin?}"
+      redirect_to(root_path) unless current_user.admin?
     end
 
 end

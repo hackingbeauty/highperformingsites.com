@@ -3,6 +3,7 @@
   %head
     %title
       = title
+    = csrf_meta_tag
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
     = stylesheet_link_tag "blueprint/screen.css", "application.css", "jqmodal.css", "jquery.jqplot.min.css", :media => "screen, projection"
     = stylesheet_link_tag "blueprint/print.css", :media => "print"
@@ -18,7 +19,7 @@
               = "#{value}"
       = yield
     = render :partial => 'layouts/footer'
-    = javascript_include_tag "jquery-1.4.2", "jqmodal", "jquery.validate.min", "application", "jquery.jqplot.min.js"
+    = javascript_include_tag "jquery-1.4.2", "jqmodal", "jquery.validate.min", "prototype", "effects", "dragdrop", "rails", "jquery.jqplot.min", "application"
     /[if IE]
       = javascript_include_tag "excanvas.min.js"
     = render :partial => 'analytics/google_analytics'

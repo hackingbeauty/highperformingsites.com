@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101205073221) do
+ActiveRecord::Schema.define(:version => 20101229032456) do
 
   create_table "grades", :force => true do |t|
     t.string   "yslow2_id"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20101205073221) do
     t.string   "encrypted_password"
     t.string   "salt"
     t.string   "api_key"
+    t.boolean  "admin",              :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
