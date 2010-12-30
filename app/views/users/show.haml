@@ -2,3 +2,9 @@
   %h2
     = gravatar_for @user
     = @user.email
+    = "#{@user.microposts.count} microposts"
+%section#microposts.module
+  = will_paginate @microposts
+  - unless @user.microposts.empty?
+    = render @microposts
+  = will_paginate @microposts

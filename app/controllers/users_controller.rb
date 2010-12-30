@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(:page => params[:page])
     @title = @user.name
     @urls = @user.urls
     # puts @user.urls.find(:first).yslow2s.all(:select => "lt, created_at").to_json
