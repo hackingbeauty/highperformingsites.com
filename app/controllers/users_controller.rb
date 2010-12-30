@@ -86,8 +86,6 @@ class UsersController < ApplicationController
     end
     
     def admin_user
-      puts "inside admin_user"
-      puts "current_user.admin? is #{current_user.admin?}"
       redirect_to(root_path) unless current_user.admin?
     end
 
