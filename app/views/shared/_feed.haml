@@ -1,0 +1,10 @@
+- unless @feed_items.empty?
+  %ul
+    - @feed_items.each do |feed|
+      %li
+        = link_to gravatar_for(feed.user), feed.user
+        = link_to feed.user.email, feed.user
+        = link_to feed.content
+        = "Posted {time_ago_in_words(feed.created_at)} ago"
+        - if current_user?(feed.user)
+          = link_to "delete", feed, :method => :delete, :confirm => "Are you sure?", :title => feed.content

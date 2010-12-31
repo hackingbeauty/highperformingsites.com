@@ -27,6 +27,10 @@ module SessionsHelper
     user == current_user
   end
   
+  def authenticate
+    deny_access unless signed_in?
+  end
+  
   def deny_access
     store_location
     redirect_to signin_path, :notice => "Please sign in to access this page." # shortcut for "flash[:notice] = "Please sign in to access this page.""
@@ -35,6 +39,14 @@ module SessionsHelper
   def redirect_back_or(default)
     redirect_to(session[:return_to] || default)
     clear_return_to
+  end
+  
+  def get_all_urls
+    @urls = current_user.urls.find(:all)
+  end
+  
+  def get_feed_items
+    @feed_items = current_user.feed.paginate(:page => params[:page])
   end
   
   private

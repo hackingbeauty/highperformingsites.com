@@ -33,7 +33,8 @@ Sitespeed3::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :sessions,    :only => [:new, :create, :destroy]
+  resources :microposts,  :only => [:create, :destroy]
   resources :yslow2
   resources :url
   
