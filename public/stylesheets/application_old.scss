@@ -1,0 +1,497 @@
+/*	=Colors
+	...................................................................... */
+
+$yellow: #F1DE00;
+$yellow_shadow: #d2c53a;
+$red: #FF4A24;
+$red_shadow: #d1503b; 
+$blue:#0071B3;
+$blue_shadow:#32659c;
+$black: #2D2C2E;
+$black_shadow:#282729;
+$silver: #E7E3E8;
+$silver_shadow: #cecbd0;
+$gold:#FFB82F;
+$warning: #cc3333;
+$success: #33cc33;
+$aside: #f9f8bc;
+
+/*	=Mixins
+	...................................................................... */
+
+@mixin rounded_corners{
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+/*  border-radius: 5px;*/
+}
+
+@mixin shadow {
+  -moz-box-shadow: 1px 2px 20px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 1px 2px 20px rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+
+@mixin shadow_enhanced {
+  -moz-box-shadow: 1px 2px 20px $gold;
+  -webkit-box-shadow: 1px 2px 20px $gold;
+  border-bottom: 1px solid $gold;
+}
+
+@mixin button {
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#FFD757), to(#FA2));
+  background: -moz-linear-gradient(top, #FFEC64, #FFB027);
+  border: 1px solid #FA2;
+  font-weight: bold;
+  cursor:pointer;
+  padding:5px 10px;
+}
+
+/*	=Main Styles
+	...................................................................... */
+	
+body {
+/*  background-color: #0071B3;
+*/
+  background-color: #f2f2f2;
+  color:$black;
+}
+
+.container {
+  margin:0 auto;
+  width:970px;
+}
+
+#content {
+  margin-top:20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.center {
+  text-align: center;
+}
+
+#sub_container {
+  @include rounded_corners;
+  background-color: white;
+}
+
+.container #sub_container #sub_container_back {
+  @include rounded_corners;
+  background: none repeat scroll 0 0 #D4D4D4;
+  padding: 19px;
+}
+
+h1 {
+  color: white;
+  font-size:2em;
+}
+
+h1 {
+  color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	/*color:white;*/
+}
+
+#flash {
+/*  width:550px;*/
+  border:1px solid $success;
+}
+
+/*	=Header Styles
+	...................................................................... */
+
+header {
+  height:100px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from($black), to($black_shadow));
+  background: -moz-linear-gradient(top, $black, $black_shadow);
+}
+
+header .container {
+  position:relative;
+  height:100%;
+}
+
+header h1 {
+  @include rounded_corners;
+  border:1px solid white;
+  padding:15px;
+  position:absolute;
+  top:22px;
+  border-bottom:1px solid white;
+  color:white;
+}
+
+header h1 a {
+  color:inherit;
+}
+
+header a {
+  color:white;
+}
+
+header h1 a:hover {
+  color:$gold;
+}
+
+/*	=Link Styles
+	...................................................................... */
+
+a {
+  text-decoration: underline;
+  font-weight: bold;
+  color: $black;
+/*  color: white !important;*/
+}
+
+#sub_container a {
+  color: #009 !important;
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+
+/*	=Table Styles
+	...................................................................... */
+
+table {
+  background-color: white;
+  clear: both;
+  font-size: 95%;
+}
+
+table thead th {
+  background-color: #ecf1f0;
+  background: white url(../images/gradients/gradient-table-heading.png) repeat-x scroll 0 0;
+  border: 1px solid #DDDDDD;
+}
+
+table thead th.alexa {
+  width: 100px;
+  text-align: center;
+}
+
+table thead th.yslow {
+  width: 100px;
+  text-align: center;
+}
+
+table thead th.page_speed {
+  width: 100px;
+  text-align: center;
+}
+
+table tbody tr {
+  height: 30px;
+}
+
+table tbody tr.even td {
+  background: #EDF3FE;
+}
+
+
+/*	=Module
+	...................................................................... */
+
+.module {
+  @include rounded_corners;
+  @include shadow;
+  background: white;
+  padding: 10px 20px;
+  margin-bottom:20px;
+}
+
+/*.module h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}*/
+
+/*	=Top Nav Styles
+	...................................................................... */
+
+
+/*	=Main Content Styles
+	...................................................................... */
+
+#main_content {
+  width: 100%;
+}
+
+.container #main_content h2 {
+  float: left;
+}
+	
+.container #main_content .pagination {
+  float: right;
+}
+
+
+/*	=Footer Styles
+	...................................................................... */
+	
+footer {
+  border-top:1px solid $silver_shadow;
+/*  background-color:white;*/
+  margin-top:20px;
+  clear:both;
+  height:100%;
+}
+
+footer ul {
+  padding-left: 0;
+}
+
+footer li {
+  float:left;
+
+}
+
+footer li.cr {
+  padding-right:10px;
+}
+
+footer li.lnk {
+  padding:0 10px;
+  border-left:1px solid $silver_shadow;
+}
+
+/*	=Show Page
+	...................................................................... */
+
+#show_page h2 {
+  margin-bottom: 40px;
+}
+	
+div.grades {
+  clear: both;
+  margin-top: 50px;
+}
+
+
+/*	=Link Styles
+	...................................................................... */
+
+.jqmWindow {
+  position: relative;
+}
+
+.jqmWindow a.jqmClose {
+  position: absolute;
+  right: 10px;
+}
+
+
+/*	=Error Styles
+	...................................................................... */
+
+#signup .error {
+  padding:0;
+}
+
+#signup label.error {
+  background: none;
+  border:none;
+}
+
+#signup input.error {
+  border:3px solid $red;
+  color: $black;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd4d4), to(#f69a9a));
+  background: -moz-linear-gradient(top, #ffd4d4, #f69a9a);
+}
+
+#signup input.valid {
+  border:3px solid green;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d7ffd4), to(#adf69a));
+  background: -moz-linear-gradient(top, #d7ffd4, #adf69a);
+}
+
+/*.field_with_errors {
+  margin-top: 10px;
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+.field_with_errors label {
+  color: #fff;
+}
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}*/
+
+
+/*	=Sign Up Form
+	...................................................................... */
+
+#signup {
+  padding:15px;
+}
+
+#signup .field {
+  clear:both;
+  float:left;
+}
+
+#signup label {
+  font-size:20px;
+}
+
+#signup .form_field {
+  @include rounded_corners;
+  float:left;
+  width:500px;
+  margin-bottom:10px;
+  margin-right:20px;
+  padding:10px 0 20px 45px;
+  background:$silver;
+  border:1px solid $silver_shadow;
+}
+
+#signup .form_field input {
+  display:block;
+  height:40px;
+  width:450px;
+  font-size:30px;
+}
+
+#signup .actions {
+  clear:both;
+}
+
+#signup .actions input {
+/*  width: 130px;*/
+/*  height: 45px;*/
+  color: $black;
+  font-size: 22px;
+  @include button;
+}
+
+#signup .hilite {
+  background: $gold;
+}
+
+
+
+/*	=Sign In Styles
+	...................................................................... */
+
+header #sign-in {
+  position:absolute;
+  right:0;
+  top:18px;
+  width:470px;
+} 
+
+header #sign-in .field {
+  margin-right:20px;
+}
+
+header #sign-in label {
+  display:block;
+}
+
+header #sign-in .field input {
+  height:20px;
+}
+
+header #sign-in .field,
+header #sign-in .actions {
+  float:left;
+}
+
+header #sign-in label {
+  color:white;
+  margin-right:5px;
+}
+
+header #sign-in .actions input {
+  @include button;
+  @include rounded_corners;
+  margin-top:22px;
+}
+
+/*	=Main Nav Styles
+	...................................................................... */
+
+nav#main-nav {
+  @include rounded_corners;
+  position:absolute;
+  padding:5px 0;
+  right:0;
+  top:35px;
+  background-color:$blue;
+}
+
+nav#main-nav li {
+  float:left;
+  margin-right:20px;
+}
+
+/*	=User Page Styles
+	...................................................................... */
+
+section#profile {
+  float:right;
+  width:320px;
+}
+
+section#beacon-data,
+section#trend {
+  clear:both;
+}
+
+/*	=Chart (Trends) Styles
+	...................................................................... */
+
+#chartdiv {
+  height:400px;
+  width:300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,15 +9,17 @@
     = stylesheet_link_tag "blueprint/print.css", :media => "print"
   %body
     = render :partial => 'layouts/header'
-    #content.container
-      = if flash[:warning] || flash[:notice] || flash[:success] || flash[:error]
-        %section#flash.module
-          %h2
-            Status
-          - flash.each do |key, value|
-            %div{:class => "flash #{key}"}
-              = "#{value}"
-      = yield
+    .container
+      #content_container
+        #content
+          = if flash[:warning] || flash[:notice] || flash[:success] || flash[:error]
+            %section#flash.module
+              %h2
+                Status
+              - flash.each do |key, value|
+                %div{:class => "flash #{key}"}
+                  = "#{value}"
+          = yield
     = render :partial => 'layouts/footer'
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js", :type => "text/javascript"}
     = javascript_include_tag "rails", "jqmodal", "jquery.validate.min", "jquery.jqplot.min", "application"

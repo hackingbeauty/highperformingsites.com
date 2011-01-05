@@ -5,195 +5,138 @@
 /*	=Main Styles
 	...................................................................... */
 body {
-  /*  background-color: #0071B3;
-  */
-  background-color: #f2f2f2;
-  color: #2d2c2e; }
+  background: #040f00;
+  font-family: "Helvetica Neue", helvetica, sans-serif; }
 
 .container {
   margin: 0 auto;
-  width: 970px; }
+  width: 100%; }
+
+#content_container {
+  background: #222222; }
 
 #content {
-  margin-top: 20px; }
-
-ul {
-  list-style-type: none; }
-
-.center {
-  text-align: center; }
-
-#sub_container {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  /*  border-radius: 5px;*/
-  background-color: white; }
-
-.container #sub_container #sub_container_back {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  /*  border-radius: 5px;*/
-  background: none repeat scroll 0 0 #D4D4D4;
-  padding: 19px; }
-
-h1 {
-  color: white;
-  font-size: 2em; }
-
-h1 {
-  color: black; }
-
-h1, h2, h3, h4, h5, h6 {
-  /*color:white;*/ }
-
-#flash {
-  /*  width:550px;*/
-  border: 1px solid #33cc33; }
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  background: white;
+  margin: 0 20px; }
 
 /*	=Header Styles
 	...................................................................... */
 header {
-  height: 100px;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#2d2c2e), to(#282729));
-  background: -moz-linear-gradient(top, #2d2c2e, #282729); }
+  height: 120px; }
 
-header .container {
-  position: relative;
-  height: 100%; }
+header li.active {
+  background: #5c65a5; }
 
-header h1 {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  /*  border-radius: 5px;*/
-  border: 1px solid white;
-  padding: 15px;
-  position: absolute;
-  top: 22px;
-  border-bottom: 1px solid white;
-  color: white; }
+header li.active a {
+  font-weight: bold; }
 
-header h1 a {
-  color: inherit; }
+h1#logo {
+  font-size: 18px;
+  margin-left: 20px;
+  padding-top: 25px;
+  padding-bottom: 5px; }
 
-header a {
-  color: white; }
-
-header h1 a:hover {
-  color: #ffb82f; }
-
-/*	=Link Styles
-	...................................................................... */
-a {
-  text-decoration: underline;
+h1#logo a {
+  color: white;
   font-weight: bold;
-  color: #2d2c2e;
-  /*  color: white !important;*/ }
-
-#sub_container a {
-  color: #009 !important; }
-
-h1 a {
   text-decoration: none; }
 
-/*	=Table Styles
+#main-nav {
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+  background: #4b538b;
+  height: 50px;
+  margin: 0 20px;
+  margin-top: 22px; }
+
+#main-nav li {
+  float: left;
+  height: 35px;
+  list-style-type: none;
+  padding: 15px 20px 0 20px; }
+
+#main-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px; }
+
+/*	=Dashboard Styles
 	...................................................................... */
-table {
-  background-color: white;
+#dashboard-nav {
+  background-color: #e9e9e9;
+  height: 36px;
+  padding-left: 5px;
+  padding-top: 14px; }
+
+#dashboard-nav li.active a {
+  color: black;
+  font-weight: bold; }
+
+#dashboard-nav li {
+  float: left;
+  list-style-type: none;
+  margin-right: 30px; }
+
+#dashboard-nav a {
+  color: #8e8e8e;
+  text-decoration: none;
+  font-size: 14px; }
+
+/*	=Sign Up Form
+	...................................................................... */
+#signup {
+  padding: 15px; }
+
+#signup h2 {
+  font-weight: bold; }
+
+#signup .field {
   clear: both;
-  font-size: 95%; }
+  float: left; }
 
-table thead th {
-  background-color: #ecf1f0;
-  background: white url(../images/gradients/gradient-table-heading.png) repeat-x scroll 0 0;
-  border: 1px solid #DDDDDD; }
+#signup label {
+  font-size: 20px; }
 
-table thead th.alexa {
-  width: 100px;
-  text-align: center; }
-
-table thead th.yslow {
-  width: 100px;
-  text-align: center; }
-
-table thead th.page_speed {
-  width: 100px;
-  text-align: center; }
-
-table tbody tr {
-  height: 30px; }
-
-table tbody tr.even td {
-  background: #EDF3FE; }
-
-/*	=Module
-	...................................................................... */
-.module {
+#signup .form_field {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   /*  border-radius: 5px;*/
-  -moz-box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  background: white;
-  padding: 10px 20px;
-  margin-bottom: 20px; }
+  border: 1px solid #8e8e8e;
+  background: #e9e9e9;
+  width: 430px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  padding: 10px 0 20px 45px; }
 
-/*.module h2 {
-  font-size: 1.5em;
+#signup .form_field input {
+  font-size: 1.6em;
+  height: 25px;
+  width: 350px;
+  padding: 8px 10px;
+  color: #333;
+  display: block;
+  border-top: 2px solid #8e8e8e; }
+
+#signup .actions {
+  clear: both; }
+
+#signup .actions input {
+  font-size: 22px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd757), to(#ffaa22));
+  background: -moz-linear-gradient(top, #ffec64, #ffb027);
+  border: 1px solid #FA2;
   font-weight: bold;
-}*/
-/*	=Top Nav Styles
-	...................................................................... */
-/*	=Main Content Styles
-	...................................................................... */
-#main_content {
-  width: 100%; }
+  cursor: pointer;
+  padding: 5px 10px; }
 
-.container #main_content h2 {
-  float: left; }
-
-.container #main_content .pagination {
-  float: right; }
-
-/*	=Footer Styles
-	...................................................................... */
-footer {
-  border-top: 1px solid #cecbd0;
-  /*  background-color:white;*/
-  margin-top: 20px;
-  clear: both;
-  height: 100%; }
-
-footer ul {
-  padding-left: 0; }
-
-footer li {
-  float: left; }
-
-footer li.cr {
-  padding-right: 10px; }
-
-footer li.lnk {
-  padding: 0 10px;
-  border-left: 1px solid #cecbd0; }
-
-/*	=Show Page
-	...................................................................... */
-#show_page h2 {
-  margin-bottom: 40px; }
-
-div.grades {
-  clear: both;
-  margin-top: 50px; }
-
-/*	=Link Styles
-	...................................................................... */
-.jqmWindow {
-  position: relative; }
-
-.jqmWindow a.jqmClose {
-  position: absolute;
-  right: 10px; }
+#signup .hilite {
+  background: #ffb82f; }
 
 /*	=Error Styles
 	...................................................................... */
@@ -214,160 +157,3 @@ div.grades {
   border: 3px solid green;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#d7ffd4), to(#adf69a));
   background: -moz-linear-gradient(top, #d7ffd4, #adf69a); }
-
-/*.field_with_errors {
-  margin-top: 10px;
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-.field_with_errors label {
-  color: #fff;
-}
-
-#error_explanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-#error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#error_explanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
-}*/
-/*	=Sign Up Form
-	...................................................................... */
-#signup {
-  padding: 15px; }
-
-#signup .field {
-  clear: both;
-  float: left; }
-
-#signup label {
-  font-size: 20px; }
-
-#signup .form_field {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  /*  border-radius: 5px;*/
-  float: left;
-  width: 500px;
-  margin-bottom: 10px;
-  margin-right: 20px;
-  padding: 10px 0 20px 45px;
-  background: #e7e3e8;
-  border: 1px solid #cecbd0; }
-
-#signup .form_field input {
-  display: block;
-  height: 40px;
-  width: 450px;
-  font-size: 30px; }
-
-#signup .actions {
-  clear: both; }
-
-#signup .actions input {
-  /*  width: 130px;*/
-  /*  height: 45px;*/
-  color: #2d2c2e;
-  font-size: 22px;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd757), to(#ffaa22));
-  background: -moz-linear-gradient(top, #ffec64, #ffb027);
-  border: 1px solid #FA2;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 5px 10px; }
-
-#signup .hilite {
-  background: #ffb82f; }
-
-/*	=Sign In Styles
-	...................................................................... */
-header #sign-in {
-  position: absolute;
-  right: 0;
-  top: 18px;
-  width: 470px; }
-
-header #sign-in .field {
-  margin-right: 20px; }
-
-header #sign-in label {
-  display: block; }
-
-header #sign-in .field input {
-  height: 20px; }
-
-header #sign-in .field,
-header #sign-in .actions {
-  float: left; }
-
-header #sign-in label {
-  color: white;
-  margin-right: 5px; }
-
-header #sign-in .actions input {
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd757), to(#ffaa22));
-  background: -moz-linear-gradient(top, #ffec64, #ffb027);
-  border: 1px solid #FA2;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 5px 10px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  /*  border-radius: 5px;*/
-  margin-top: 22px; }
-
-/*	=Main Nav Styles
-	...................................................................... */
-nav#main-nav {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  /*  border-radius: 5px;*/
-  position: absolute;
-  padding: 5px 0;
-  right: 0;
-  top: 35px;
-  background-color: #0071b3; }
-
-nav#main-nav li {
-  float: left;
-  margin-right: 20px; }
-
-/*	=User Page Styles
-	...................................................................... */
-section#profile {
-  float: right;
-  width: 320px; }
-
-section#beacon-data,
-section#trend {
-  clear: both; }
-
-/*	=Chart (Trends) Styles
-	...................................................................... */
-#chartdiv {
-  height: 400px;
-  width: 300px; }
