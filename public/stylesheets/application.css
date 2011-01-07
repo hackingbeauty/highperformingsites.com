@@ -92,6 +92,25 @@ h1#logo a {
   text-decoration: none;
   font-size: 14px; }
 
+/*	=Footer Styles
+	...................................................................... */
+footer ul {
+  padding-left: 40px; }
+
+footer li {
+  list-style-type: none;
+  float: left;
+  margin-right: 20px;
+  font-size: 0.8em;
+  color: #8e8e8e; }
+
+footer li.cr a {
+  color: #8e8e8e; }
+
+footer li a {
+  color: #f4f4f4;
+  text-decoration: none; }
+
 /*	=Dashboard Styles
 	...................................................................... */
 #dashboard-nav {

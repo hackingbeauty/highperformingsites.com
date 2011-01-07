@@ -164,6 +164,29 @@ h1#logo a {
   font-size:14px;
 }
 
+/*	=Footer Styles
+	...................................................................... */
+
+footer ul {
+  padding-left:40px;
+}
+
+footer li {
+  list-style-type:none;
+  float:left;
+  margin-right:20px;
+  font-size:0.8em;
+  color: $dark_silver;
+}
+
+footer li.cr a {
+  color:$dark_silver;
+}
+
+footer li a {
+  color:$off_white;
+  text-decoration:none;
+}
 
 /*	=Dashboard Styles
 	...................................................................... */
