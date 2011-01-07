@@ -71,7 +71,8 @@ $aside: #f9f8bc;
 	
 body {
   background: $dark_black;
-   font-family: "Helvetica Neue", helvetica, sans-serif;
+  font-family: "Helvetica Neue", helvetica, sans-serif;
+  font-size:16px;
 }
 
 .container {
@@ -87,8 +88,23 @@ body {
   @include rounded_bottom_corners;
   background: white;
   margin:0 20px;
+
 }
 
+.module {
+    padding:20px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: Helvetica, Arial, sans-serif, verdana;
+  letter-spacing:-1px;
+ 
+}
+
+h2 {
+  font-size:1.6em;
+  font-weight:bold;
+}
 
 /*	=Header Styles
 	...................................................................... */
@@ -126,11 +142,15 @@ h1#logo a {
   margin-top:22px;
 }
 
+#main-nav ul {
+  padding-left:20px;
+}
+
 #main-nav li {
   float:left;
   height:35px;
   list-style-type:none;
-  padding:15px 20px 0 20px;
+  padding:12px 20px 0 20px;
 }
 
 #main-nav a {
@@ -148,6 +168,14 @@ h1#logo a {
   height:36px;
   padding-left:5px;
   padding-top:14px;
+  background:-moz-linear-gradient( center bottom, #E9E9E9 64%, #C7C7C7 100% );
+  background:-webkit-gradient( linear, left bottom, left top, color-stop(0.64, #E9E9E9), color-stop(1, #C7C7C7) );
+  border-bottom:1px solid #BDBDBD;
+  border-top:1px solid white;
+}
+
+#dashboard-nav ul {
+  padding-left:15px;
 }
 
 #dashboard-nav li.active a {
@@ -165,6 +193,19 @@ h1#logo a {
   color:$dark_silver;
   text-decoration:none;
   font-size:14px;
+}
+
+#dashboard-page #welcome {
+  float:left;
+}
+
+#dashboard-page #stats {
+  float:right;
+  font-size:.9em;
+}
+
+#dashboard-page #beacon-data {
+  clear:both;
 }
 
 /*	=Sign Up Form
@@ -191,7 +232,6 @@ h1#logo a {
   @include rounded_corners;
   border:1px solid $dark_silver;
   background: $light_silver;
-
   width:430px;
   margin-bottom:10px;
   margin-right:20px;
@@ -246,9 +286,15 @@ h1#logo a {
   background: -moz-linear-gradient(top, #d7ffd4, #adf69a);
 }
 
+/*	=Beacon Data Table Styles
+	...................................................................... */
 
-
-
+td.url a {
+  text-decoration:none;
+  color:$dark_black;
+  font-weight:bold;
+  font-size:1em;
+}
 
 
 

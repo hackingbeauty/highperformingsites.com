@@ -1,7 +1,11 @@
 class PagesController < ApplicationController
   def home
-    @title = "Create an account and start tracking your app"
-    @user = User.new
+    if signed_in?
+      redirect_to dashboard_show_path
+    else
+      @title = "Create an account and start tracking your app"
+      @user = User.new
+    end
   end
 
   def contact

@@ -1,45 +1,51 @@
-%nav#dashboard-nav
-  %ul
-    %li.active
-      = link_to "Page Load Time", dashboard_show_path
-    %li
-      = link_to "HTML", dashboard_show_path
-    %li
-      = link_to "CSS", dashboard_show_path
-    %li
-      = link_to "JavaScript", dashboard_show_path
-    %li
-      = link_to "Images", dashboard_show_path
-    %li
-      = link_to "Beacon Data", dashboard_show_path
-%h2
-  Dashboard
-%section#micropost.module
-  %h2
-    Micropost
-  = render 'shared/micropost_form'
-  = render 'shared/feed'
-%section#beacon-data.module
-  %h2
-    URLs
-  %table#dashboard
-    %thead
-      %th
-        URL
-      %th
-        Latest Recorded Load Time
-      %th
-        Latest Recorded Date
-    %tbody
-      - @urls.each do |u|
-        %tr{:class=>"#{cycle('odd', 'even')} row"}
-          %td.url      
-            = link_to u.name, u
-          %td.load_time
-            = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).lt))
-          %td.date
-            = (u.yslow2s.find(:last) == nil) ? 'N/A' : u.yslow2s.find(:last).created_at.to_s(:short)
-  #dialog.jqmWindow
+#dashboard-page
+  %nav#dashboard-nav
+    %ul
+      %li.active
+        = link_to "Page Load Time", dashboard_show_path
+      %li
+        = link_to "HTML", dashboard_show_path
+      %li
+        = link_to "CSS", dashboard_show_path
+      %li
+        = link_to "JavaScript", dashboard_show_path
+      %li
+        = link_to "Images", dashboard_show_path
+      %li
+        = link_to "Beacon Data", dashboard_show_path
+  %section#welcome.module
+    %h2
+      Plugin your key and start tracking
+  %section#stats.module
+    %ul
+      %li
+        = "Websites Tracked:"
+      %li
+        = "Key: #{@api_key}"
+      %li
+        = "Fastest Site:"
+  %section#beacon-data.module
+    %h2
+      You're Watching These
+    %table#dashboard
+      %thead
+        %th
+          URL
+        %th
+          Page Load Time
+        %th
+          Latest Recorded Date
+      %tbody
+        - @urls.each do |u|
+          %tr{:class=>"#{cycle('odd', 'even')} row"}
+            %td.url      
+              = link_to u.name, u
+            %td.load_time
+              = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).lt))
+            %td.date
+              = (u.yslow2s.find(:last) == nil) ? 'N/A' : u.yslow2s.find(:last).created_at.to_s(:short)
+    #dialog.jqmWindow
+
 
 
 
