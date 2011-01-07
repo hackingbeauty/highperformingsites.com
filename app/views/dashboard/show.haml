@@ -27,7 +27,7 @@
   %section#beacon-data.module
     %h2
       You're Watching These
-    %table#dashboard
+    %table#dashboard-table
       %thead
         %th
           URL
@@ -35,6 +35,7 @@
           Page Load Time
         %th
           Latest Recorded Date
+        %th
       %tbody
         - @urls.each do |u|
           %tr{:class=>"#{cycle('odd', 'even')} row"}
@@ -44,6 +45,8 @@
               = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).lt))
             %td.date
               = (u.yslow2s.find(:last) == nil) ? 'N/A' : u.yslow2s.find(:last).created_at.to_s(:short)
+            %td.view_report
+              = link_to "View Report", u, :class => "button"
     #dialog.jqmWindow
 
 

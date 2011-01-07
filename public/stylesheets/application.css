@@ -35,6 +35,17 @@ h2 {
   font-size: 1.6em;
   font-weight: bold; }
 
+.button {
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd757), to(#ffaa22));
+  background: -moz-linear-gradient(top, #ffec64, #ffb027);
+  border: 1px solid #FA2;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  /*  border-radius: 5px;*/ }
+
 /*	=Header Styles
 	...................................................................... */
 header {
@@ -160,12 +171,7 @@ h1#logo a {
 
 #signup .actions input {
   font-size: 22px;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd757), to(#ffaa22));
-  background: -moz-linear-gradient(top, #ffec64, #ffb027);
-  border: 1px solid #FA2;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 5px 10px; }
+  /*  @include button;*/ }
 
 #signup .hilite {
   background: #ffb82f; }
@@ -192,8 +198,15 @@ h1#logo a {
 
 /*	=Beacon Data Table Styles
 	...................................................................... */
+#dashboard-table td {
+  height: 40px; }
+
 td.url a {
   text-decoration: none;
   color: #040f00;
   font-weight: bold;
   font-size: 1em; }
+
+td.view_report a {
+  color: #040f00;
+  text-decoration: none; }
