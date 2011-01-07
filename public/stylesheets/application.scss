@@ -236,37 +236,51 @@ footer li a {
   clear:both;
 }
 
-/*	=Sign Up Form
+/*	=Page Specifi Styles
 	...................................................................... */
 
-#signup {
-  padding:15px;
+/* Home Page & Sign In Page*/
+#hp,
+#si { 
+  padding:20px;
+  position:relative;
 }
 
-#signup h2 {
-  font-weight:bold;
+/* Teaser */
+h3#ts { 
+  position:absolute;
+  right:60px;
+  top:240px;
+  font-size:2.5em;
 }
 
-#signup .field {
-  clear:both;
-  float:left;
+
+
+/*	=Form Styles
+	...................................................................... */
+
+#signup,
+#signin {
+  @include rounded_corners;
+  background: $light_silver;
+  border:1px solid $dark_silver;
 }
 
-#signup label {
+form label {
   font-size:20px;
 }
 
-#signup .form_field {
+form .form_field {
   @include rounded_corners;
   border:1px solid $dark_silver;
-  background: $light_silver;
+  background: $off_white;
   width:430px;
   margin-bottom:10px;
   margin-right:20px;
   padding:10px 0 20px 45px;
 }
 
-#signup .form_field input {
+form .form_field input {
   font-size:1.6em;
   height:25px;
   width: 350px;
@@ -276,25 +290,26 @@ footer li a {
   border-top: 2px solid $dark_silver;
 }
 
-#signup .actions {
+form .actions {
   clear:both;
 }
 
-#signup .actions input {
+form .actions input {
   font-size: 22px;
-/*  @include button;*/
 }
 
-#signup .hilite {
+form .hilite {
   background: $gold;
 }
 
+#signup,
+#signin {
+  padding:15px;
+}
+
+
 /*	=Error Styles
 	...................................................................... */
-
-#signup .error {
-  padding:0;
-}
 
 #signup label.error {
   background: none;

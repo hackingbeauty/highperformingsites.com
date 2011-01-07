@@ -150,33 +150,46 @@ footer li a {
 #dashboard-page #beacon-data {
   clear: both; }
 
-/*	=Sign Up Form
+/*	=Page Specifi Styles
 	...................................................................... */
-#signup {
-  padding: 15px; }
+/* Home Page & Sign In Page*/
+#hp,
+#si {
+  padding: 20px;
+  position: relative; }
 
-#signup h2 {
-  font-weight: bold; }
+/* Teaser */
+h3#ts {
+  position: absolute;
+  right: 60px;
+  top: 240px;
+  font-size: 2.5em; }
 
-#signup .field {
-  clear: both;
-  float: left; }
+/*	=Form Styles
+	...................................................................... */
+#signup,
+#signin {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  /*  border-radius: 5px;*/
+  background: #e9e9e9;
+  border: 1px solid #8e8e8e; }
 
-#signup label {
+form label {
   font-size: 20px; }
 
-#signup .form_field {
+form .form_field {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   /*  border-radius: 5px;*/
   border: 1px solid #8e8e8e;
-  background: #e9e9e9;
+  background: #f4f4f4;
   width: 430px;
   margin-bottom: 10px;
   margin-right: 20px;
   padding: 10px 0 20px 45px; }
 
-#signup .form_field input {
+form .form_field input {
   font-size: 1.6em;
   height: 25px;
   width: 350px;
@@ -185,21 +198,21 @@ footer li a {
   display: block;
   border-top: 2px solid #8e8e8e; }
 
-#signup .actions {
+form .actions {
   clear: both; }
 
-#signup .actions input {
-  font-size: 22px;
-  /*  @include button;*/ }
+form .actions input {
+  font-size: 22px; }
 
-#signup .hilite {
+form .hilite {
   background: #ffb82f; }
+
+#signup,
+#signin {
+  padding: 15px; }
 
 /*	=Error Styles
 	...................................................................... */
-#signup .error {
-  padding: 0; }
-
 #signup label.error {
   background: none;
   border: none; }

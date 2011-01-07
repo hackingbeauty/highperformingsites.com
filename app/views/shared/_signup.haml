@@ -1,17 +1,16 @@
-.module
-  #signup
-    %h2
-      Start tracking the performance of your site.
-    = form_for @user do |f|
-      = render 'shared/error_messages', :object => f.object
-      .form_field    
-        = f.label :email
-        = f.text_field :email, :class => 'input', :tabindex => '1', :autocomplete => "OFF"
-      .form_field
-        = f.label :password
-        = f.password_field :password, :class => 'input', :tabindex => '2'
-      .form_field
-        = f.label :password_confirmation, "Confirm"
-        = f.password_field :password_confirmation, :class => 'input', :tabindex => '3'
-      .actions
-        = f.submit "Sign Up", :tabindex => '4', :class => "button"
+#signup
+  %h2
+    Sign Up
+  = form_for @user do |f|
+    = render 'shared/error_messages', :object => f.object
+    .form_field    
+      = f.label :email
+      = f.text_field :email, :class => 'input', :tabindex => '1', :autocomplete => "OFF"
+    .form_field
+      = f.label :password
+      = f.password_field :password, :class => 'input', :tabindex => '2'
+    .form_field
+      = f.label :password_confirmation, "Confirm"
+      = f.password_field :password_confirmation, :class => 'input', :tabindex => '3'
+    .actions
+      = f.submit "Sign Up", :tabindex => '4', :class => "button"

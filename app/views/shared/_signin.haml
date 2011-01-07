@@ -1,13 +1,15 @@
-#sign-in
+#signin
+  %h2
+    Sign In
   = form_for(:session, :url => sessions_path) do |f|
-    .field
+    .form_field 
       = f.label :email
       = f.text_field :email
-    .field
+    .form_field 
       = f.label :password
       = f.password_field :password
     .actions
-      = f.submit "Sign In"
+      = f.submit "Sign In", :class => "button"
 / %p
 /   New user?
 /   = link_to "Sign up now!", signup_path
