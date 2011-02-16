@@ -233,6 +233,9 @@ form .hilite {
 #dashboard-table td {
   height: 40px; }
 
+td.url {
+  width: 900px; }
+
 td.url a {
   text-decoration: none;
   color: #040f00;
