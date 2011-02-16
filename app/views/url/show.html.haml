@@ -1,3 +1,19 @@
+%nav#dashboard-nav
+  %ul
+    %li.active
+      = link_to "Page Load Time", dashboard_show_path
+    %li
+      = link_to "Page Weight", dashboard_show_path
+    %li
+      = link_to "HTML", dashboard_show_path
+    %li
+      = link_to "CSS", dashboard_show_path
+    %li
+      = link_to "JavaScript", dashboard_show_path
+    %li
+      = link_to "Images", dashboard_show_path
+    %li
+      = link_to "Beacon Data", dashboard_show_path
 %section#beacon-data.module
   %h2
     = "History for #{@the_url.name}"

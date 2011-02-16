@@ -54,7 +54,7 @@ header {
 header li.active {
   background: #5c65a5; }
 
-header li.active a {
+header li.active {
   font-weight: bold; }
 
 h1#logo {
