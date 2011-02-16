@@ -12,7 +12,7 @@
     .container
       #content_container
         #content
-          = if flash[:warning] || flash[:notice] || flash[:success] || flash[:error]
+          - if flash[:warning] || flash[:notice] || flash[:success] || flash[:error]
             %section#flash.module
               %h2
                 Status
