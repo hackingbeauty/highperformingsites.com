@@ -22,7 +22,8 @@ body {
   -webkit-border-bottom-right-radius: 10px;
   -webkit-border-bottom-left-radius: 10px;
   background: white;
-  margin: 0 20px; }
+  margin: 0 20px;
+  min-width: 700px; }
 
 .module {
   padding: 20px; }
@@ -42,6 +43,8 @@ h2 {
   font-weight: bold;
   cursor: pointer;
   padding: 5px 10px;
+  display: block;
+  width: 100px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   /*  border-radius: 5px;*/ }
@@ -76,7 +79,8 @@ h1#logo a {
   background: #4b538b;
   height: 50px;
   margin: 0 20px;
-  margin-top: 22px; }
+  margin-top: 22px;
+  min-width: 700px; }
 
 #main-nav ul {
   padding-left: 20px; }
@@ -233,8 +237,24 @@ form .hilite {
 #dashboard-table td {
   height: 40px; }
 
+#dashboard-table tr {
+  cursor: pointer; }
+
+#dashboard-table td {
+  border-bottom: 1px solid #ebecee;
+  border-top: 1px solid white; }
+
+#dashboard-table tr.odd {
+  background: #f4f5f7; }
+
+#dashboard-table tr.even {
+  background: #e1e9f2; }
+
+#dashboard-table tr:hover {
+  background-color: #ebecee !important; }
+
 td.url {
-  width: 900px; }
+  width: 600px; }
 
 td.url a {
   text-decoration: none;
@@ -242,6 +262,10 @@ td.url a {
   font-weight: bold;
   font-size: 1em; }
 
+/*td.view_report {
+  padding-left:130px;
+}*/
 td.view_report a {
   color: #040f00;
-  text-decoration: none; }
+  text-decoration: none;
+  float: right; }
