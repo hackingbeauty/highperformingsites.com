@@ -45,9 +45,26 @@ h2 {
   padding: 5px 10px;
   display: block;
   width: 100px;
+  color: #040f00;
+  text-decoration: none;
+  text-align: center;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   /*  border-radius: 5px;*/ }
+
+.button:hover {
+  border: 1px solid #2d2c2e; }
+
+.button.delete {
+  background: red;
+  color: #f4f4f4;
+  width: 60px;
+  border: 1px solid #832827;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#cd7973), to(#b15650));
+  background: -moz-linear-gradient(top, #cd7973, #b15650); }
+
+.button.delete:hover {
+  border: 1px solid #cc3333; }
 
 /*	=Header Styles
 	...................................................................... */
@@ -237,10 +254,8 @@ form .hilite {
 #dashboard-table td {
   height: 40px; }
 
-#dashboard-table tr {
-  cursor: pointer; }
-
 #dashboard-table td {
+  cursor: pointer;
   border-bottom: 1px solid #ebecee;
   border-top: 1px solid white; }
 
@@ -251,10 +266,14 @@ form .hilite {
   background: #e1e9f2; }
 
 #dashboard-table tr:hover {
-  background-color: #ebecee !important; }
+  background-color: #ebecee; }
 
 td.url {
   width: 600px; }
+
+td.delete {
+  width: 80px;
+  padding-left: 10px; }
 
 td.url a {
   text-decoration: none;
@@ -262,10 +281,5 @@ td.url a {
   font-weight: bold;
   font-size: 1em; }
 
-/*td.view_report {
-  padding-left:130px;
-}*/
 td.view_report a {
-  color: #040f00;
-  text-decoration: none;
   float: right; }

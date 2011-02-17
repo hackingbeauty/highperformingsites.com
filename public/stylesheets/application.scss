@@ -66,6 +66,18 @@ $aside: #f9f8bc;
   padding:5px 10px;
   display:block;
   width:100px;
+  color: $dark_black;
+  text-decoration:none;
+  text-align:center;
+}
+
+@mixin delete_button {
+  background:red;
+  color:$off_white;
+  width:60px;
+  border:1px solid #832827;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#cd7973), to(#b15650));
+  background: -moz-linear-gradient(top, #cd7973, #b15650);
 }
 
 /*	=Main Styles
@@ -111,6 +123,18 @@ h2 {
 .button {
   @include button;
   @include rounded_corners;
+}
+
+.button:hover {
+  border:1px solid $black;
+}
+
+.button.delete {
+  @include delete_button;
+}
+
+.button.delete:hover {
+  border:1px solid #cc3333;
 }
 
 /*	=Header Styles
@@ -310,7 +334,6 @@ form .hilite {
   padding:15px;
 }
 
-
 /*	=Error Styles
 	...................................................................... */
 
@@ -339,11 +362,8 @@ form .hilite {
   height:40px;
 }
 
-#dashboard-table tr {
-  cursor:pointer;
-}
-
 #dashboard-table td{
+  cursor:pointer;
   border-bottom:1px solid #ebecee;
   border-top:1px solid white;
 }
@@ -357,11 +377,16 @@ form .hilite {
 }
 
 #dashboard-table tr:hover {
-  background-color:#ebecee !important;
+  background-color:#ebecee;
 }
 
 td.url {
   width:600px;
+}
+
+td.delete {
+  width: 80px;
+  padding-left:10px;
 }
 
 td.url a {
@@ -371,13 +396,7 @@ td.url a {
   font-size:1em;
 }
 
-/*td.view_report {
-  padding-left:130px;
-}*/
-
 td.view_report a {
-  color: $dark_black;
-  text-decoration:none;
   float: right;
 }
 

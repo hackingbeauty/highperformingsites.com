@@ -16,6 +16,7 @@
     %table#dashboard-table
       %thead
         %th
+        %th
           URL
         %th
           Page Load Time
@@ -25,6 +26,8 @@
       %tbody
         - @urls.each do |u|
           %tr{:class=>"#{cycle('odd', 'even')} row"}
+            %td.delete
+              = link_to "Delete", u, :class => "button delete"
             %td.url      
               = link_to u.name, u
             %td.load_time
