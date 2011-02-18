@@ -19,5 +19,9 @@
           = link_to "All Users", users_path
         %li
           = link_to "Sign Out", signout_path, :method => :delete
+    - else
+      %ul
+        %li
+          = link_to "Sign In", signin_path
     / - else
     /   = render :partial => "shared/signin"

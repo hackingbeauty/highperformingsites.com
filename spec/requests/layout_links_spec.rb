@@ -21,8 +21,8 @@ describe "LayoutLinks" do
     
     it "should have a signin button" do
       visit root_path
-      response.should have_selector("input",  :type => "submit",
-                                              :value => "Sign In")
+      response.should have_selector("a",  :href => signin_path,
+                                          :content => "Sign In")
     end
     
   end

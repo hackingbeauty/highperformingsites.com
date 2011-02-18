@@ -27,7 +27,7 @@
         - @urls.each do |u|
           %tr{:class=>"#{cycle('odd', 'even')} row"}
             %td.delete
-              = link_to "Delete", u, :class => "button delete"
+              = link_to "Delete", u, :method => "delete", :class => "button delete", :confirm => "Are you sure?"
             %td.url      
               = link_to u.name, u
             %td.load_time
