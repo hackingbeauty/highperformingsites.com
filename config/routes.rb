@@ -8,6 +8,8 @@ Sitespeed3::Application.routes.draw do
   get "pages/contact"
 
   get "pages/about"
+  
+  get "url/trends"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -16,6 +18,7 @@ Sitespeed3::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   
+  # match '/trends',      :to => 'url#trends'
   match '/contact',     :to => 'pages#contact'
   match '/about',       :to => 'pages#about'
   match '/help',        :to => 'pages#help'

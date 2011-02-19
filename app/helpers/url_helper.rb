@@ -5,9 +5,14 @@ module UrlHelper
 
   end
   
-  def readable_time(utc)
+  def readable_time_stamp(utc)
     time = Time.parse(utc)
     time.strftime("%B %d, %Y at %I:%M %p")
+  end
+  
+  def url_display(url)
+    url = Domainatrix.parse(url)
+    display_url = "#{url.domain}.#{url.public_suffix }#{url.path}"
   end
 
 end

@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+  include DashboardHelper
   
   def show
     if signed_in?

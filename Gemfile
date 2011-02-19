@@ -27,6 +27,7 @@ gem 'gravatar_image_tag', '0.1.0'
 gem 'will_paginate', '3.0.pre2'
 gem 'pg', '0.9.0'
 gem 'simple-navigation'
+gem 'domainatrix'
 
 group :development do
   gem 'rspec-rails', '2.1.0'

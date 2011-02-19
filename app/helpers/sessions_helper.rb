@@ -40,11 +40,7 @@ module SessionsHelper
     redirect_to(session[:return_to] || default)
     clear_return_to
   end
-  
-  def get_all_urls
-    @urls = current_user.urls.find(:all)
-  end
-  
+    
   def get_feed_items
     @feed_items = current_user.feed.paginate(:page => params[:page])
   end

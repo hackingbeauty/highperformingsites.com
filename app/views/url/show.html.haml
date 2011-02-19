@@ -1,22 +1,12 @@
 %nav#dashboard-nav
   %ul
     %li.active
-      = link_to "Page Load Time", dashboard_show_path
+      = link_to "History", dashboard_show_path
     %li
-      = link_to "Page Weight", dashboard_show_path
-    %li
-      = link_to "HTML", dashboard_show_path
-    %li
-      = link_to "CSS", dashboard_show_path
-    %li
-      = link_to "JavaScript", dashboard_show_path
-    %li
-      = link_to "Images", dashboard_show_path
-    %li
-      = link_to "Beacon Data", dashboard_show_path
+      = link_to "Trends", url_trends_path
 %section#beacon-data.module
   %h2
-    = "History for #{@the_url.name}"
+    = "History for #{url_display(@the_url.name)}"
   %table#dashboard
     %thead
       %th
@@ -32,35 +22,33 @@
       %th
         Primed Cache Requests
       %th
-        Stats
-      %th
-        Components
-      %th
         YSlow Score
+      %th
+      %th
     %tbody
       - @urls.each do |u|
         %tr{:class=>"#{cycle('odd', 'even')} row"}
           %td
-            = u.created_at.to_s(:short)
+            = readable_time_stamp(u.created_at.to_s)
           %td
-            = u.lt
+            = load_time(u.lt)
           %td
-            = u.w
+            = number_to_human_size(u.w)
           %td
-            = u.w_c
+            = number_to_human_size(u.w_c)
           %td
             = u.r
           %td
             = u.r_c
           %td
-            = link_to 'Show', all_components_path(u), :class => 'showDialog'
-          %td
-            = link_to 'Components', all_components_path(u)
-          %td
             = u.o
-%section#trend.module
-  %h2
-    Trend
-  #chartdiv
+          %td
+            = link_to 'Stats', all_components_path(u), :class => 'showDialog button'
+          %td
+            = link_to 'Components', all_components_path(u), :class => 'button'
+/ %section#trend.module
+/   %h2
+/     Trend
+/   #chartdiv
 
           

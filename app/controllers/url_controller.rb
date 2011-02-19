@@ -17,6 +17,10 @@ class UrlController < ApplicationController
     redirect_to dashboard_show_path
   end
   
+  def trends
+    @the_url = current_user.urls.find_by_id(params[:id])
+  end
+  
   private
   
     def signed_in_user
