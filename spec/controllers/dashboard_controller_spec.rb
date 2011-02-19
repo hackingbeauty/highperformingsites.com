@@ -19,6 +19,12 @@ describe DashboardController do
       response.should be_success
     end
     
+    it "should show a list of URLs" do
+      pending
+    end
+    
+    
+    
   end
 
 end
