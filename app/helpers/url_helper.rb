@@ -1,12 +1,13 @@
 module UrlHelper
   
-  def grade(grade)
-    grade.to_i
+  def load_time(milliseconds)
+    milliseconds.to_f/1000
+
   end
   
   def readable_time(utc)
-    # utc.strftime("%a %b #{utc.day.ordinalize}")
-    utc.to_formatted_s(:long)
+    time = Time.parse(utc)
+    time.strftime("%B %d, %Y at %I:%M %p")
   end
     
 end

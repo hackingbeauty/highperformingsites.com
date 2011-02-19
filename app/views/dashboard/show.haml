@@ -21,6 +21,10 @@
         %th
           Page Load Time
         %th
+          Requests
+        %th
+          Total Weight
+        %th
           Latest Recorded Date
         %th
       %tbody
@@ -31,9 +35,13 @@
             %td.url      
               = link_to u.name, u
             %td.load_time
-              = (u.yslow2s.find(:last) == nil) ? 'N/A' : (grade(u.yslow2s.find(:last).lt))
+              = (u.yslow2s.find(:last) == nil) ? 'N/A' : (load_time(u.yslow2s.find(:last).lt))
+            %td.requests
+              = (u.yslow2s.find(:last) == nil) ? 'N/A' : (u.yslow2s.find(:last).r)
+            %td.weight
+              = (u.yslow2s.find(:last) == nil) ? 'N/A' : (number_to_human_size(u.yslow2s.find(:last).w))
             %td.date
-              = (u.yslow2s.find(:last) == nil) ? 'N/A' : u.yslow2s.find(:last).created_at.to_s(:short)
+              = (u.yslow2s.find(:last) == nil) ? 'N/A' : (readable_time(u.yslow2s.find(:last).created_at.to_s))
             %td.view_report
               = link_to "View Report", u, :class => "button"
     #dialog.jqmWindow
