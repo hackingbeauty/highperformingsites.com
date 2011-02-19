@@ -5,14 +5,12 @@
   %section#stats.module
     %ul
       %li
-        = "Websites Tracked:"
+        = "Websites Tracked: #{@tracked_sites}"
       %li
         = "Key: #{@api_key}"
-      %li
-        = "Fastest Site:"
   %section#beacon-data.module
     %h2
-      You're Watching These
+      You're Watching These Sites
     %table#dashboard-table
       %thead
         %th

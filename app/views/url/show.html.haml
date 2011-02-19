@@ -20,7 +20,7 @@
   %table#dashboard
     %thead
       %th
-        URL
+        Recorded Date
       %th
         Load Time
       %th
@@ -37,13 +37,11 @@
         Components
       %th
         YSlow Score
-      %th
-        Recorded Date
     %tbody
       - @urls.each do |u|
         %tr{:class=>"#{cycle('odd', 'even')} row"}
-          %td.url      
-            = link_to u.url.name
+          %td
+            = u.created_at.to_s(:short)
           %td
             = u.lt
           %td
@@ -60,8 +58,6 @@
             = link_to 'Components', all_components_path(u)
           %td
             = u.o
-          %td
-            = u.created_at.to_s(:short)
 %section#trend.module
   %h2
     Trend

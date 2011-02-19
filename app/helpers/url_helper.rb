@@ -9,5 +9,5 @@ module UrlHelper
     time = Time.parse(utc)
     time.strftime("%B %d, %Y at %I:%M %p")
   end
-    
+
 end
