@@ -8,7 +8,7 @@ class UrlController < ApplicationController
 
   def show
     @the_url = Url.find(params[:id])
-    @urls = current_user.urls.find_by_id(params[:id]).yslow2s.find(:all, :order => 'lt DESC')
+    @yslow2s = current_user.urls.find_by_id(params[:id]).yslow2s.find(:all, :order => 'lt ASC')
   end
   
   def destroy

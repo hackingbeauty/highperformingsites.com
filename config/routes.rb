@@ -18,7 +18,7 @@ Sitespeed3::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   
-  # match '/trends',      :to => 'url#trends'
+  match '/trends',      :to => 'url#trends'
   match '/contact',     :to => 'pages#contact'
   match '/about',       :to => 'pages#about'
   match '/help',        :to => 'pages#help'
@@ -26,7 +26,8 @@ Sitespeed3::Application.routes.draw do
   match '/signup',      :to => 'users#new'
   match '/signin',      :to => 'sessions#new'
   match '/signout',     :to => 'sessions#destroy'
-  match '/all_components/:id' => 'yslow2#all_components', :as => :all_components
+  match '/components/',  :to => 'yslow2#components'
+  # match '/all_components/:id' => 'yslow2#all_components', :as => :all_components
   match 'yslow' => 'beacon#yslow'
   
   # Sample of named route:

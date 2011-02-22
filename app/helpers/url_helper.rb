@@ -14,5 +14,7 @@ module UrlHelper
     url = Domainatrix.parse(url)
     display_url = "#{url.domain}.#{url.public_suffix }#{url.path}"
   end
-
+  
+  
+  
 end

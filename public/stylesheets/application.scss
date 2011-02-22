@@ -355,33 +355,33 @@ form .hilite {
   background: -moz-linear-gradient(top, #d7ffd4, #adf69a);
 }
 
-/*	=Beacon Data Table Styles
+/*	=Table Styles
 	...................................................................... */
 
-#dashboard-table td {
+table td {
   height:40px;
 }
 
-#dashboard-table td{
+table td{
   cursor:pointer;
   border-bottom:1px solid #ebecee;
   border-top:1px solid white;
 }
 
-#dashboard-table tr.odd {
+table tr.odd {
   background:#f4f5f7;
 }
 
-#dashboard-table tr.even{
+table tr.even{
   background:#e1e9f2;
 }
 
-#dashboard-table tr:hover {
+table tr:hover {
   background-color:#ebecee;
 }
 
 td.url {
-  width:400px;
+  width:300px;
 }
 
 td.delete {

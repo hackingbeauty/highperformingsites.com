@@ -26,29 +26,22 @@
       %th
       %th
     %tbody
-      - @urls.each do |u|
+      - @yslow2s.each do |y|
         %tr{:class=>"#{cycle('odd', 'even')} row"}
           %td
-            = readable_time_stamp(u.created_at.to_s)
+            = readable_time_stamp(y.created_at.to_s)
           %td
-            = load_time(u.lt)
+            = load_time(y.lt)
           %td
-            = number_to_human_size(u.w)
+            = number_to_human_size(y.w)
           %td
-            = number_to_human_size(u.w_c)
+            = number_to_human_size(y.w_c)
           %td
-            = u.r
+            = y.r
           %td
-            = u.r_c
+            = y.r_c
           %td
-            = u.o
+            = y.o
           %td
-            = link_to 'Stats', all_components_path(u), :class => 'showDialog button'
-          %td
-            = link_to 'Components', all_components_path(u), :class => 'button'
-/ %section#trend.module
-/   %h2
-/     Trend
-/   #chartdiv
-
+            = link_to 'Components', y, :class => 'showDialog button'
           
