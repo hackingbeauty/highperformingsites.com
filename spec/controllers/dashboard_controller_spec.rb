@@ -12,6 +12,7 @@ describe DashboardController do
       controller.stub_chain(:current_user, :urls, :find).and_return(urls)
       api_key = "123lkj123l;kj123;l1k23"
       controller.stub_chain(:current_user, :api_key).and_return(api_key)
+      controller.stub_chain(:current_user, :urls, :size).and_return(3)
     end
     
     it "should be successful" do
@@ -22,9 +23,7 @@ describe DashboardController do
     it "should show a list of URLs" do
       pending
     end
-    
-    
-    
+
   end
 
 end
