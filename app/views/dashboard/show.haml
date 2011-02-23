@@ -31,7 +31,8 @@
             %td.delete
               = link_to "Delete", u, :method => "delete", :class => "button delete", :confirm => "Are you sure?"
             %td.url      
-              = link_to url_display(u.name), u
+              / = link_to url_display(u.name), u
+              = link_to u.name, u
             %td.load_time
               = (u.yslow2s.find(:last) == nil) ? 'N/A' : (load_time(u.yslow2s.find(:last).lt))
             %td.requests

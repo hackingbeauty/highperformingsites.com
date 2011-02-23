@@ -6,7 +6,8 @@
       = link_to "Trends", url_trends_path
 %section#beacon-data.module
   %h2
-    = "History for #{url_display(@the_url.name)}"
+    / = "History for #{url_display(@the_url.name)}"
+    = "History for #{@the_url.name}"
   %table#dashboard
     %thead
       %th
@@ -43,5 +44,5 @@
           %td
             = y.o
           %td
-            = link_to 'Components', y, :class => 'showDialog button'
+            = link_to 'More', y, :class => 'showDialog button'
           
