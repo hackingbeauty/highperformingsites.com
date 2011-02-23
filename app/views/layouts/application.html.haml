@@ -7,6 +7,8 @@
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
     = stylesheet_link_tag "blueprint/screen.css", "application.css", "jqmodal.css", "jquery.jqplot.min.css", :media => "screen, projection"
     = stylesheet_link_tag "blueprint/print.css", :media => "print"
+    /[if lt IE 9]
+      %script{:src => 'http://html5shim.googlecode.com/svn/trunk/html5.js'}
   %body
     = render :partial => 'layouts/header'
     .container
@@ -22,7 +24,7 @@
           = yield
     = render :partial => 'layouts/footer'
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js", :type => "text/javascript"}
-    = javascript_include_tag "rails", "jqmodal", "jquery.validate.min", "jquery.jqplot.min", "application"
+    = javascript_include_tag "rails", "jqmodal", "jquery.validate.min", "jquery.jqplot.min", "jquery.bt.min","application"
     /[if IE]
       = javascript_include_tag "excanvas.min.js"
     = render :partial => 'analytics/google_analytics'

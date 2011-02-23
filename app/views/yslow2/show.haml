@@ -1,6 +1,9 @@
 %section.module
   %h2
     = @domain
+%section.module
+  %h3
+    = "Quick Stats"
   %table
     %thead
       %th
@@ -20,7 +23,7 @@
         %td
           = json_to_hash(v,"r")
 %section.module
-  %h2
+  %h3
     = "Components"
   %table
     %thead
@@ -44,11 +47,16 @@
     - @components.each do |k,v|
       %tr{:class=>"#{cycle('odd', 'even')} row"}
         %td
-          = json_to_hash(k,"type")
+          %strong 
+            = json_to_hash(k,"type")
         %td
           = json_to_hash(k,"size")
-        %td
-          = json_to_hash(k,"url")
+        %td.comp_url
+          = truncate(json_to_hash(k,"url"), :length => 100)
+          %span.hide
+            = json_to_hash(k,"url")
+          %img.hide.pic
+
         / %td
         /   = json_to_hash(k,"expires")
         / %td

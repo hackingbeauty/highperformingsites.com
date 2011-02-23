@@ -3,8 +3,10 @@ module Yslow2Helper
   def json_to_hash(str,requested_key)
     str.each do |k,v|
       if k == requested_key
-        if requested_key == "w"
+        if requested_key == "w" || requested_key == "size"
           return number_to_human_size(v)
+        elsif requested_key == "url"
+          return CGI::unescape(v)
         else
           return v
         end
@@ -24,9 +26,4 @@ module Yslow2Helper
     end
   end
   
-  # def yslow_components(yslowItem)
-  #   @components = yslowItem.url
-  #   redirect_to
-  # end
-  # 
 end

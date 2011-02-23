@@ -36,6 +36,10 @@ h2 {
   font-size: 1.6em;
   font-weight: bold; }
 
+h3 {
+  font-size: 1.4em;
+  font-weight: bold; }
+
 .button {
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd757), to(#ffaa22));
   background: -moz-linear-gradient(top, #ffec64, #ffb027);
@@ -65,6 +69,9 @@ h2 {
 
 .button.delete:hover {
   border: 1px solid #cc3333; }
+
+.hide {
+  display: none; }
 
 /*	=Header Styles
 	...................................................................... */
@@ -251,6 +258,9 @@ form .hilite {
 
 /*	=Table Styles
 	...................................................................... */
+table {
+  min-width: 700px; }
+
 table td {
   height: 40px; }
 
