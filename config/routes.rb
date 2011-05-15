@@ -19,7 +19,6 @@ Sitespeed3::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
   
   match '/url/:id/trends',      :to => 'url#trends'
-  match '/get_trends',          :to => 'url#get_trends'
   match '/contact',     :to => 'pages#contact'
   match '/about',       :to => 'pages#about'
   match '/help',        :to => 'pages#help'
