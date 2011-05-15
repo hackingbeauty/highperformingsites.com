@@ -24,9 +24,8 @@
           = yield
     = render :partial => 'layouts/footer'
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js", :type => "text/javascript"}
-    = javascript_include_tag "rails", "jqmodal", "jquery.validate.min", "jquery.jqplot.min", "jquery.bt.min","application"
+    = javascript_include_tag "jqmodal", "jquery.validate.min", "jquery.bt.min", "https://www.google.com/jsapi", "google.charts", "application"
     /[if IE]
       = javascript_include_tag "excanvas.min.js"
     = render :partial => 'analytics/google_analytics'
-    = render :partial => 'analytics/reinvigorate'
     = debug(params) if Rails.env.development?

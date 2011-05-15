@@ -18,7 +18,14 @@ class UrlController < ApplicationController
   end
   
   def trends
-    @the_url = current_user.urls.find_by_id(params[:id])
+    url_id = params[:id]
+    @the_url = Url.find_by_id(url_id)
+  end
+  
+  # Ajax function
+  def get_trends
+    record = params[:id]
+    render :nothing => true
   end
   
   private

@@ -77,13 +77,8 @@
 	  }
 	}
 	
-	window.HPS.Table = {
+	HPS.Table = {
 	  componentUrls:function(){
-      // $('.comp_url').hover(function(){
-        // console.log($(this));
-        // var hidden_elem = $(this).children('.hide');
-        //  var hidden_url = $(this).children('.hide').html();
-        //  $(hidden_elem).append("<img src='' />");
         $('.comp_url').bt({
           contentSelector: "$(this).children('.pic').attr('src',$(this).children('.hide').html())",
           positions: ['right','left'],
@@ -107,14 +102,6 @@
       // })
 	  }
 	}
-  
-  // window.HPS.createTrendsChart = function(){
-  //     $.jqplot('chartdiv',  [[[1, 2],[3,5.12],[5,13.1],[7,33.6],[9,85.9],[11,719.9]]],
-  //     { title:'Average Load Time',
-  //       series:[{color:'#FA2'}]
-  //     });
-  // }
-  // 
 	
 })();
 		
@@ -124,6 +111,5 @@ $(document).ready (function() {
 	window.HPS.Form.hilite();
 	window.HPS.Form.focus();
   window.HPS.Form.validate();
-  // window.HPS.createTrendsChart();
   window.HPS.Table.componentUrls();
 });
