@@ -2,11 +2,10 @@ GoogleCharts = {
   val: "yada",
   init:function(){  
     if($("#chart").length > 0 ){
-      // Load the Visualization API and the piechart package.
-       google.load('visualization', '1', {'packages':['corechart']});
-
-       // Set a callback to run when the Google Visualization API is loaded.
-        google.setOnLoadCallback(this.drawChart);
+      //this.getData();
+      
+      google.load('visualization', '1', {'packages':['corechart']});
+      google.setOnLoadCallback(GoogleCharts.drawChart);
     }  
   },
   getData:function(){
@@ -15,16 +14,14 @@ GoogleCharts = {
     $.ajax({
       url: '/get_trends?id='+dataRecord,
       dataType: 'json',
-      error:function(res){
-        console.log('error');
-      },
       success:function(res){
+        // console.log(res);
+        return res;
       }
     })
   },
   drawChart:function(){
-    var urlData =  GoogleCharts.getData(); 
-    
+
     // Create our data table.
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Size');

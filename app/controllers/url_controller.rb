@@ -20,12 +20,17 @@ class UrlController < ApplicationController
   def trends
     url_id = params[:id]
     @the_url = Url.find_by_id(url_id)
+    @trends = get_trends
   end
   
-  # Ajax function
   def get_trends
     record = params[:id]
-    render :nothing => true
+    hash = Hash.new(0)
+    yslow2s = Url.find_by_id(record).yslow2s
+    yslow2s.each do |y|
+      hash[y.created_at] = y.w
+    end
+    return hash.to_json 
   end
   
   private
