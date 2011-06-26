@@ -7,3 +7,4 @@ tmp/**/*
 .sass_cache/*
 .gitignore
 webrat.log
+config/database.yml
